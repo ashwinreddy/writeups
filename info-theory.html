@@ -1,0 +1,253 @@
+<!-- <meta charset="utf-8" emacsmode="-*- markdown -*-"><link rel="stylesheet" href="https://casual-effects.com/markdeep/latest/newsmag.css?"> -->
+<!-- <meta charset="utf-8" emacsmode="-*- markdown -*-"><link rel="stylesheet" href="https://casual-effects.com/markdeep/latest/apidoc.css?""> -->
+
+
+**The First Principle of Information Theory**
+    Ashwin Reddy
+
+# Communication
+
+In everyday talk, information roughly means the semantic content conveyed in a message. If you get a text message about a dinner event, the information is the time, place, and dress code. Contrary to this view, shown most [clearly](https://www.cs.bham.ac.uk/research/projects/cogaff/misc/austen-info.html) in the novels of Jane Austen, stands Claude Shannon, the father of information theory.
+
+> "The fundamental problem of communication is that of reproducing at one point either exactly or approximately
+> a message selected at another point. Frequently the messages have _meaning_; that is they refer
+> to or are correlated according to some system with certain physical or conceptual entities. These semantic
+> aspects of communication are irrelevant to the engineering problem. The significant aspect is that the actual
+> message is one _selected from a set_ of possible messages. The system must be designed to operate for each
+> possible selection, not just the one which will actually be chosen since this is unknown at the time of design."
+>                                                              -- _A Mathematical Theory of Communication_ (1948)
+
+*******************************************************************************************************
+* +--------------------+  +-------------+         +---+           +----------+  +-------------+       *          
+* | information source +->| transmitter +-------->|   +---------->| receiver +->| destination |       *      
+* +--------------------+  +-------------+ signal  +---+ received  +----------+  +-------------+       *          
+*                     message                       ^    signal             message                   *
+*                                                   |                                                 *
+*                                                   |                                                 *
+*                                               +---+----+                                            *
+*                                               | noise  |                                            *
+*                                               | source |                                            *
+*                                               +--------+                                            *
+*******************************************************************************************************
+
+Shannon asserts the semantic meaning is not the focus of the engineering task. As long as the transmitter and receiver know which symbols are in use, we can be agnostic to the meanings of the symbols. But how can we analyze information, if it is not in the sense of the message?
+
+For communication to be useful, the message received has to do work, changing the receiver's state in some way. Accordingly, more information is received if the message does more work or the receiver's state changes more. If the receiver gets a message which was already known or incorporated, no information was received. To quantify information, we need to model the receiver's expectations. 
+
+The metaphor used in information theory is that information is surprise. Let's take Wordle as an example since 3Blue1Brown did a nice [analysis](https://www.youtube.com/watch?v=v68zYyaEmEA) from an information-theoretic standpoint. If you find out that the word has the letters _E_ and _A_, then you are not surprised because you know lots of English words have these letters. Consequently, you gained little information about the word in question. On the other hand, a word containing _Z_ is surprising, hence informative, because you can focus on a relatively small set of words now. The more probable a fact is, the less information it provides.
+
+The thesis that information is surprise is the point on which all of information theory turns. Once we have a strong grip on the notion of and notation for [#Kirsh2021] surprise, the rest unfolds smoothly.
+
+# Surprise
+
+Information theory is an extension of probability, which gives us the basic tools to think about how surprising an event is. Since we don't need to know the specific symbols used by the transmitter and receiver, we just call it an **alphabet** $\mathcal{X}$ and start applying probabilistic tools. If you need a concrete example, you can take $\mathcal{X}$ to be the actual English alphabet.
+
+We might guess the surprise or unexpectedness of an event with probability $p$ is $s(p)=\frac{1}{p}$. This is not a bad start, but Shannon saw that the logarithm of this quantity was a better measure because if we have two independent events, then we expect their information should add up. Concretely, we'd like to have
+
+\begin{equation}
+\label{additivity}
+s(p_1 p_2) = s(p_1) + s(p_2),
+\end{equation}
+
+which entails that $s(p) = k \log(p)$ for some $k$.[^cauchy] Conveniently, if we pick $k=-1$, then $s(p)$ is both a function of $\frac{1}{p}$ and obeys equation [additivity] as desired.
+
+Surprise
+: For an event with probability $p$, the surprise is $$s(p) = \log\left( \frac{1}{p}\right).$$
+
+!!! Tip
+    You are free to choose any base whatsoever for the $\log$ since it only changes the value of $k$ by a constant factor. For mathematical analysis, the natural log is common. In many contexts, we choose to use base 2, in which case the unit of surprise is bits. Think of 1 bit as the information in a fair coin flip.
+
+This definition yields a number of intuitive properties.
+
+- Information is always non-negative, i.e. $s(p) \geqslant 0$.
+- We deduce that a guaranteed event ($p=1$) gives no surprise, and that in the opposite direction, as $p$ -> 0, $s$ -> $\infty$.
+- $s(p)$ monotonically increases as $p$ decreases. We are more surprised as an event becomes less likely.
+
+![Figure [surprise]: Surprise as a Quantiative Measure](https://i.imgur.com/EnP5VHz.png)
+
+In a communication system, the receiver could choose to send any of the symbols in $\mathcal{X}$, but surprise is a measure only of one symbol. We need to measure the surprise over the entire alphabet.
+
+# Entropy
+
+We consider from the outset that the receiver and transmitter don't necessarily share the same probability distribution for the symbols. Speakers and listeners don't always share the same expectations. So we'll say that the random variable $X$, representing a symbol from the alphabet, has a true distribution $p$, and the receiver has their own supposed distribution $q$, which could be anything. 
+
+The first step is to try to measure the surprise when $p$ and $q$ communicate.
+
+Cross-Entropy
+: The cross-entropy $H_q$ of a random variable $X$ with true distribution $p$ and assumed distribution $q$ is given by the expected value $$H_q[X] = H\big(p(X) \parallel q(X)\big) = \mathop{\mathbb{E}}_{x \sim  p(x)}\big[s\big(q(x)\big)\big]$$
+
+Cross-entropy is an expression of surprise, so it is also measured in bits. To understand cross-entropy, it's best to break down the expression step by step.
+
+|Symbol|Meaning|
+|------|-------|
+|$x \sim p(x)$|Transmitter samples a message from $p$ and sends it|
+|$q(x)$|Receiver decides on message likelihood|
+|$s(\cdot)$|Receiver computes surprise|
+|$\mathbb{E}$|Repeat previous steps, take the average in the limit|
+
+The cross-entropy is high when $q$ receives symbols from $p$ that it marked unlikely. But, as $q$ and $p$ become more similar, the cross-entropy decreases. Naturally, this condition, of the receiver and transmitter agreeing, is an important case. In fact, it is given the name **entropy**.
+
+Entropy
+: \begin{equation}\label{ent-def}H[X] = H\big(p(X)\big) = H\big(p(X) \parallel p(X)\big)\end{equation}
+
+
+In many treatments of information theory, you'll see that entropy is presented as
+
+\begin{equation}
+\label{classicdef}
+H[X] = -\sum_{x \in \mathcal{X}} p(x) \log p(x),
+\end{equation}
+
+which shows how to compute it more easily.
+
+!!! WARNING
+    Some authors define entropy with an integral $H[X] = -\int_{\mathcal{X}} f(x) \log f(x) \,\mathrm{d}x$. This is called differential entropy and it shares some, but not all, properties of discrete entropy, which we're discussing now. 
+
+Eqn. [ent-def] and eqn. [classicdef] are equivalent, but I've delayed showing eqn. [classicdef] because it completely buries the notion of surprise. The story goes that John von Neumann suggested Shannon call the quantity entropy for its resemblance with a similar formula in thermodynamics. Playing on that notion, it is reasonable that entropy attains its maximimum of $\log |\mathcal{X}|$ for a uniform distribution over $\mathcal{X}$, which represents maximum disorder.
+
+The simplest entropy calculation we can do is for a random variable $X \sim \mathsf{Bernoulli}(p)$ where $p$ is the probability of a heads.
+
+![Figure [bernoulli]: Entropy of a coin flip as a function of $p$](https://i.imgur.com/gsNqGnZ.jpg)
+
+When $p=\frac{1}{2}$, we are the most surprised about the coin flip because both possibilities are equally likely. It takes 1 bit, as expected, to describe it. As one side becomes more and more likely, we need less bits to describe the flip. 
+
+
+It is often useful to refer to the difference between the cross-entropy and entropy, which has both names of Kullback–Leibler (KL) divergence and relative entropy. We'll use the latter for thematic consistency.
+
+Relative Entropy
+: The difference between the cross-entropy and entropy of a random variable $$D_{\rm KL}(p(X) \parallel q(X)) = H(p(X) \parallel q(X)) - H(p(X))$$
+
+We have defined three terms in quick succession, so let us summarize. If messages $X$ are sampled from $p$ and expected to come from $q$, then on average the receiver has surprise $H_q[X]$. The lowest this average surprise could possibly be is $H[X]$, which occurs when $p=q$. For any other situation, there is some suboptimality coming from the difference between $p$ and $q$, which is captured by the relative entropy $D_{KL}(p(X) \parallel q(X))$. 
+
+\begin{equation}
+\label{bits}
+\underbrace{H_q[X]}_{\text{Actual}} = \underbrace{H[X]}_{\text{Theoretical}} + \underbrace{D_{KL}(p(X) \parallel q(X))}_{\text{Difference}}
+\end{equation}
+
+We won't prove it, but it should make intuitive sense that relative entropy is never negative:
+
+$$
+D_{\rm KL}(p(X) \parallel q(X)) \geqslant 0 \tag{Gibbs' Inequality}
+$$
+
+# Coding
+
+We've now built up enough theory to explain one of Shannon's key results.
+
+
+Source coding theorem
+: The best you can do in losslessly compressing a word made of $n$ i.i.d. symbols is $n H[X]$. 
+
+We will not discuss how one performs this compression, except to point the reader toward the field of **coding theory** and the technique of Huffman encoding, which you should now have the background to understand.
+
+
+# Channels
+
+We have yet to address how the transmitter sends symbols and the receiver accepts them. In information theory lingo, the medium of communication is called the **channel**. In the real world, channels may corrupt the symbols that the transmitter sends, leaving the receiver to reconstruct or guess the intended message.
+
+Two classic examples of channels are the **binary symmetric channel (BSC)** and the **binary erasure channel (BEC)** . 
+
+
+In the binary symmetric channel, you send one bit, and there is a probability $p_e$ that the channel flips it to the wrong value. Here is a schematic diagram.
+
+******************
+*  X           Y  
+*     1 - p_e             
+*  0 *-------* 0  
+*     \     /
+*  p_e \   /
+*       \ /
+*        +
+*       / \
+*  p_e /   \
+*     /     \
+*  1 *-------* 1 
+*     1 - p_e             
+******************
+
+Here is the probability matrix.
+
+|X\Y|0|1|
+|--|--|--|
+|0|$1-p_e$|$p_e$|
+|1|$p_e$|$1-p_e$|
+
+In the binary erasure channel, there is a probability $p_e$ that instead of sending the desired message, the receiver gets a corrupted symbol, which we denote with a question mark (_?_). Again, here is a schematic diagram.
+
+
+***********************************
+*   X                          Y  *
+*          1 - p(erasure)         *
+*   1+-------------------->    1  *
+*     \                           *
+*      \     p(erasure)           *
+*       +----------------->    ?  *
+*      /                          *
+*     /                           *
+*   0+-------------------->    0  *
+*          1 - p(erasure)         *
+***********************************
+
+Here is the probability matrix.
+
+|X\Y|0|1|?|
+|--|--|--|--|
+|0|$1-p_e$|0|$p_e$|
+|1|0|$1-p_e$|$p_e$|
+
+Let us assume the channel is fixed. We can't adjust the channel behavior, but we can be clever about which messages the transmitter sends. Let's call the message sent $X$ and the message received $Y$. We'll introduce a new concept called **mutual information**, denoted $I[X; Y]$, which will measure how much information we get about $Y$ when we know $X$. Then, we'll try to maximize this quantity so that the receiver has the $Y$ which is most tightly coupled to $X$. It will be useful to look at a diagram, although we haven't yet defined all our terms. 
+
+![](https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Entropy-mutual-information-relative-entropy-relation-diagram.svg/2560px-Entropy-mutual-information-relative-entropy-relation-diagram.svg.png)
+
+The goal is to make the overlap between $X$ and $Y$ as big as possible. But to do this, we need to define the total area of the circles $H[X,Y]$ and the portion of the circles without the overlap $H[X \mid Y]$ and $H[Y \mid X]$.
+
+The first term, $H[X, Y]$, is called joint entropy because it depends on the joint distribution, and it measures how many bits we need to describe both variables. 
+
+Joint entropy
+: $$H[X, Y] = \mathop{\mathbb{E}}_{p(x,y)}\left[h(p(x,y))\right]$$
+
+
+The terms $H[X \mid Y]$ and $H[Y \mid X]$ are conditional entropies because they depend on the conditional distribution, and they tell us how many bits we need to describe one of the variables if we know the other.
+
+Conditional entropy
+: $$H[X \mid Y] = \mathop{\mathbb{E}}_{p(x,y)}\left[h(p(x \mid y))\right]$$
+
+Use the diagram to confirm for yourself that
+
+$$
+H[Y] + H[X \mid Y] = H[X, Y].
+$$
+
+I read this as saying the following: if I have a representation for $Y$ and a way to encode $X$ when I know $Y$, then I can combine them to encode both $X$ and $Y$. But we now come to mutual information.
+
+Mutual information
+: Mutual information has many equivalent definitions. \begin{align*}I[X; Y] &= H[Y] - H[Y \mid X] \\ &= H[X] - H[X \mid Y] \\ &= H[X, Y] - H[X \mid Y] - H[Y \mid X] \\ &= H[X] + H[Y] - H[X, Y] \\ &=  D_{\rm KL}\left(p(X, Y) \parallel p(X)p(Y) \right)\end{align*}
+
+All but the last equation can be easily verified with the diagram. The interpretations I like best are the first and last.
+
+- $I[X; Y] = H[Y] - H[Y \mid X]$. Mutual information is the distance between the entropy of $Y$ knowing nothing and the entropy of $Y$ having seen the input $X$. 
+- $I[X; Y] = D_{\rm KL}\left(p(X, Y) \parallel p(X)p(Y) \right)$. Mutual information is how inefficient it would be to treat the input $X$ and $Y$ as independent. 
+
+Notice that $I[X; Y] = I[Y; X]$, the connection between $X$ and $Y$ is symmetric. 
+
+We are close to wrapping everything up neatly. Recall the channels we introduced earlier: BSC and BEC. We can't affect the channel, which converts our sequence $X^n$ into a $Y^n$. The best we can do is be clever about $X$. Therefore, Shannon defines the **channel capacity** as the highest rate of reliable information flow in the channel.
+
+Channel capacity
+: $$C = \max_{p(x)} I[X; Y]$$
+
+In the best case, our channel is perfect, so $Y=X$, and $C = I[X;X] = H[X]$. But the BSC has channel capacity $1 - H_b(p)$, and BEC has $1 - P_e$. The real significance of the channel capacity is that it Shannon proves it is a speed limit for communication.
+
+Noisy-channel coding theorem
+: Suppose you are willing to allow an error rate of $p_b$ in your channel. Then the highest rate you can send symbols through is $R = \frac{C}{1 - H[Z]}$ for $Z \sim \mathsf{Bernoulli}(p_b)$. In particular, if you have $p_b = 0$, then $R = C$, and you can achieve arbitrarily low corruption errors.
+
+Which concludes our presentation of the basic results that Shannon first showed, using the core metaphor that information is surprisal.
+
+# Notes
+
+[#Kirsh2021]: [A Practical & Unified Notation for Information-Theoretic Quantities in ML](https://arxiv.org/abs/2106.12062).
+
+[^cauchy]: The equation goes by the name of _Cauchy logarithmic functional equation_. 
+
+<!-- <style class="fallback">body{visibility:hidden}</style><script>markdeepOptions={tocStyle:'medium'};</script> -->
+
+<style class="fallback">body{visibility:hidden;white-space:pre;font-family:monospace}</style><script src="markdeep.min.js" charset="utf-8"></script><script src="https://morgan3d.github.io/markdeep/latest/markdeep.min.js" charset="utf-8"></script><script>window.alreadyProcessedMarkdeep||(document.body.style.visibility="visible")</script>
