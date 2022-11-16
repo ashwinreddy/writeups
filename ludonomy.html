@@ -32,7 +32,7 @@ To direct their agency, players need a goal $\Omega(G)$, a privileged state in t
 
 Finally, a game needs restrictions, rules or constraints, which impose limits on $S$ but in turn open up the possibility of play. Notably, players have to affirm these rules on their own terms. Moving a bulky sofa into a new apartment is an activity that affords agency and has a goal, but it is not a game. The constraints are defined purely by the circumstances. You can't drag the sofa through the door because the door is not wide enough, not because there are external rules preventing it. In contrast, the chess ruleset prevents its players from moving pieces however they like, and players subscribe to these rules for no other reason than to play chess.
 
-Thus, we cover chess, crossword puzzles, ultimate frisbee, video games, and the rest of the litany.
+Thus, we cover chess, crossword puzzles, ultimate frisbee, video games, and the rest.
 
 # Instinctution
 
@@ -49,7 +49,7 @@ Thus, a game is an institution that tries to satisfy the need for play by giving
 
 The question isn't _why do people play games_ but rather _where does play show up in games_?
 
-We have created a definition that emphasizes the structure of games, but it is impoverished. It talks about play as a mere matter of structure. It lacks the sense that players yearn for play. Now, we won't and don't need a definition of play; [#Feezell10] gives us the sense that it is protean, at once a behavior or activity; a motive, attitude, or state of mind; a form or structure; and a meaningful experience. Rather than directly grappling with play, we will consider two prototypical examples of games. One fits our current definition perfectly. The other one defies it. In attempting to square the two, we will gain a more holistic sense for the sacred syllable of game. 
+We have created a definition that emphasizes the structure of games, but it impoverishes play by treating it as a mere matter of structure. It lacks the sense that players yearn for play. Unlike games, we won't and don't need a definition of play. [#Feezell10] gives us the sense that it is protean, at once a behavior or activity; a motive, attitude, or state of mind; a form or structure; and a meaningful experience. Rather than directly grappling with play, we will consider two prototypical examples of games. One fits our current definition perfectly. The other one defies it. In attempting to square the two, we will gain a more holistic sense for the sacred syllable of game. 
 
 
 # Solve
@@ -72,9 +72,9 @@ In fact, symbols suppress the geometry of a game's landscape. Stephen Wolfram [s
 
 Wolfram focuses in his computational essay on games with discrete state spaces and moves. For such games, the natural visualization is a graph. Each vertex is a state and the edges represent moves from one state to another. If the game has a continuous state space, however, the better description is a manifold. 
 
-The best example of a manifold is Earth, whose surface I can traverse continuously.[^dimensions] Just as an atlas in real life is a book of charts that allow me to navigate the earth, every manifold $M$ has a mathematical structure called an atlas $\mathscr{A}$, which contains charts $\varphi_\alpha$ that cover all of $M$. 
+We're all familiar with the manifold that is the Earth's surface,[^dimensions] and just as a physical atlas is a book of charts that allow me to navigate the earth, every manifold $M$ has a mathematical atlas $\mathscr{A}$ which contains charts $\varphi_\alpha$ that cover all of $M$. 
 
-[^dimensions]: The Earth's surface is an example of a 2-dimensional manifold because you need sheets of paper as the charts. A 1D manifold has number lines for charts, and a 3D manifold has cubes for charts, so on and so forth; you can have manifolds in $n$ dimensions for any integer $n \geqslant 1$.
+[^dimensions]: The Earth's surface is an example of a 2-dimensional manifold because you need flat sheets of paper as the charts. A 1D manifold has number lines for charts, and a 3D manifold has cubes for charts, so on and so forth; you can have manifolds in $n$ dimensions for any integer $n \geqslant 1$.
 
 
 $$
@@ -92,12 +92,12 @@ Critically, players don't need to keep the whole manifold in their memory to pla
 Path
 : A trajectory in the manifold, represented by a function $f: [0, 1] \to M$. If $M$ is a graph, then a sequence of edges connecting vertices on the graph.
 
-In this vocabulary, a game provides a manifold on which players trace out paths that aim to terminate in $\Omega(G)$. A succesful path is a solution to the game.
+A game can now be compactly described as a manifold on which players aim to trace out solutions, simply paths terminating in $\Omega(G)$.
 
 Solution
 : A path that ends at $\Omega(G)$ while obeying all the constraints.
 
-All this formalization makes solving a game simple.
+Formalization makes solving a game simple.
 
 1. Enumerate or represent all possible paths that end at $\Omega(G)$.
 2. Select the one which is optimal by some algorithm or heuristic. 
@@ -108,7 +108,7 @@ Problem solving is all about thinking in this way. Working backwards is the tech
 
 ![Figure [solutions]: Various paths $\mathbf{q}(t)$ that start at $\mathbf{q}_1$ on the left and end at $\Omega(G)$ on the right. The player, i.e. Nature, needs to select the optimal one.](https://upload.wikimedia.org/wikipedia/commons/0/00/Homotopy_between_two_paths.svg)
 
-The laws of physics make only some paths possible, but Nature can select only one. We can prove -- not here -- that she selects the optimal one as defined by
+The laws of physics make for many possible paths, but Nature can select only one. It can be shown that Nature selects the optimal one as defined by
 
 $$
 \frac{\delta S}{\delta \mathbf{q}(t)} = 0, \tag{Hamilton's Principle}
@@ -231,7 +231,7 @@ Every game has both sides because it must have a ludonomy to capture the rules a
 
 We draw a box for Ludonomy because it can swallow games whole and an arrow for _Sprachspiel_ because it can extend indefinitely. We'll never exhaust, for example, all the ways of using writing to communicate. 
 
-Each discipline is a game that provides its own frame for seeing and understanding its subject matter. Taken alone, we can doubt what a single discipline has to tell us. A typical philosophy paper can't and won't bring in a mathematical perspective. A work of art usually doesn't do the science it references justice. But the principle of consilience tells us that if fields with different operating assumptions and techniques converge on the same conclusions, we should believe that conclusion more. For this reason, it's important to speculate just a little bit on what these foundation games do.
+Each discipline is a game that provides its own frame for seeing and understanding its subject matter. Taken alone, we can doubt what a single discipline has to tell us. A typical philosophy paper can't and won't bring in a mathematical perspective. A work of art usually doesn't do the science it references justice. But the principle of consilience tells us that if fields with different operating assumptions and techniques converge on the same conclusions, we should believe that conclusion more. For this reason, it's important to speculate just a little bit on what these foundational games do.
 
 _**Math**_. Technical papers in pure mathematics are a sequence of definitions, lemmas, theorems, and proofs. They leave you to develop the intuition; the paper's purpose is to lay out the facts. Heavy on Ludonomy and light on _Sprachspiel_, math still needs language to communicate. Grice's Maxims are always in play: the paper needs to say something interesting, relevant, and informative in a clear way. And one needs a sense of adventure and curiosity in mathematics as well. 
 
@@ -253,6 +253,13 @@ _**Philosophy**_. A serious discussion about the purpose of philosophy could tak
 _**Art**_. Art includes creating, understanding, and critiquing it, whether writing, drawing, painting, sculpting, or singing. Of course, we see a great sense of play in Picasso and Dali. We love artists who revolutionize the game around their own style. Undoubtedly, artists have the agency to put elements together on the canvas, in the marble, whatever the medium may be. The goal of a piece of art is never clear, but the artist must bind themselves to _some_ rules to create something meaningful and sensible. 
 
 Understanding and critiquing art is also a game. Reading a literary book or watching a cinematic movie is a game because you have to choose how to take in what you're seeing. If you skip to the end of the book or movie, you didn't "win." The point is to follow a path in the space of imagination. In some sense, this path is fixed because the concrete materials of the artwork don't change. But the experience of the path _is_ different for different viewers. There are better and worst readers and viewers depending on how well they make sense of and use that experience and can convey it to others.  
+
+|Discipline|Ludonomy|_Sprachspiel_|
+|----------|--------|-------------|
+|**Math**|Pure math|Applied math|
+|**Science**|Theoretical|Experimental|
+|**Philosophy**|Analytical|Continental|
+|**Art**|?|Avant garde|
 
 # Chaos Emerges
 
@@ -287,7 +294,7 @@ For a concrete example, look at stories. A story with minimal entropy is one you
 
 A good story, following Equation \ref{eq:opt}, needs constraints. They don't need to be realistic, but the story needs to be consistent in following them. A _deus ex machina_ is a type of inconsistency because, by definition, the story never signalled such an intervention. Thus, a story aims for maximum entropy, given its own narrative constraints. The information flows, now smoothly, now abruptly, but it must end up somewhere interesting, remarkable, _unexpected_.
 
-Academics puts an emphasis on ludonomy, which we desperately need. However, we also need to be humble about what we know and acknowledge that a healthy amount of uncertainty is necessary for play. In _Black Swan_ and _Antifragile_, Nassim Taleb makes space for the family of disorder we're talking about, which includes
+Academics emphasizes the necessary work of ludonomy, but we must also be humble about what we know and acknowledge that a healthy amount of uncertainty enables play. In _Black Swan_ and _Antifragile_, Nassim Taleb makes space for the family of disorder we're talking about, which includes
 
 > uncertainty; variability; imperfect, incomplete knowledge; chance; chaos; volatility; disorder; entropy; time; the unknown; randomness; turmoil; stressor; error; dispersion of outcomes; unknowledge
 > 
@@ -323,9 +330,9 @@ Parsimony is a more difficult word to grasp. Luckily, Jorges Luis Borges' short 
 > no other Relic of the Disciplines of Geography.
 >                               
 
-The Cartographers Guild are the Ludonomers, hoping to create a complete manifold. But, as Borges points out, such a manifold is useless because it doesn't focus our attention. The job of a map is to simplify the world so we can navigate it. That's parsimony. How do we create systems that know what the right representations of the world are? There cannot be a general theory of such representations because the right representation depends on the situation. We have to design AI systems that can do this reliably. 
+The Cartographers Guild are ludonomers hoping to create a complete manifold. But, as Borges points out, such a manifold is useless because it doesn't focus our attention. The job of a map is to simplify the world so we can navigate it. That's parsimony. How do we create systems that know what the right representations of the world are? There cannot be a general theory of such representations because the right representation depends on the situation. We have to design AI systems that can do this reliably. 
 
-It seems, as per [#Eysenbach22], that constraining these systems to also follow the principle of maximum entropy from section [Chaos Emerges] makes them able to solve challenging variations on the same problem. I'm hopeful that papers in machine learning like [#Lampinen21] and [#Liu22] will continue to come out and show that AI systems do better when they incorporate language-based explanations (a _Sprachspiel_) in their learning algorithms.
+It seems, as per [#Eysenbach22], that constraining these systems to also follow the principle of maximum entropy from section [Chaos Emerges] makes them able to solve challenging variations on the same problem. I'm hopeful that AI systems will do better when they incorporate language-based explanations and other _Sprachspiele_ into their learning algorithms (see [#Lampinen21] and [#Liu22]).
 
 In [Awakening from the Meaning Crisis](https://www.youtube.com/playlist?list=PLND1JCRq8Vuh3f0P5qjrSdb5eC1ZfZwWJ), John Vervaeke discusses the Ludonomy/_Sprachspiel_ dichotomy in the language of cognitive science and philosophy. Vervaeke believes in a framework he calls Relevance Realization. While humans are amazing at Ludonomy, solving problems and seeing underlying structures in things, a lot of this happen unconsciously. It's possible for us to fixate on the wrong thing, frame the problem the wrong way, not exploring possibilities outside the stories we tell ourselves. We too need ludonomy to intellectualize and solve problems, to find discrepancies (self-consistency). But we also need _Sprachspiele_ to discover what to focus on (parsimony), to see what else might be relevant. We can't survive without both values. 
 
@@ -339,8 +346,6 @@ In [Awakening from the Meaning Crisis](https://www.youtube.com/playlist?list=PLN
 > Merlyn said: "It is because one likes to tinker with things, to play with possibilities."
 >               -- _The Book of Merlyn_
 
-Is life a game, metaphorically speaking?
-
 No, at least not at first. We don't always have agency. Our goals are typically nested in a hazy and shifting stack. As in, right now I should be studying so I can do well on the test so I can get a good grade so I can graduate, so what should I think of my not studying right now? In addition, the rules are never quite fully spelled out. Most unfortunate of all, we may lose the _spiritus ludi_.
 
 But a metaphor isn't an equation. That life comes with its own responsibilities, duties, and labor doesn't invalidate the sentiment. We just have to ask whether games are a useful lens of looking at life. I say they are. 
@@ -353,7 +358,7 @@ We're so acquainted with this negative sense of the game that the positive sense
 
 If life is a game, then it has a ludonomy and a _Sprachspiel_. The ludonomy is the orienting mechanism, providing a goal $\Omega(G)$ and some basic rules and grammar to form paths that can take us there. The _Sprachspiel_ is what makes us understand each other a little better and start to articulate ideas that are in tantalizingly close reach. If you look closely, you'll see the push and pull between the two at many levels. It occurs at the level of evolution, a theory whose grammar would suggest that only the most adaptated will survive, but, nonetheless, is compatible with the emergence of peacocks whose display of brilliant feathers makes them eminently vulnerable. You'll see it in a poem with an intricately crafted structure of words that still sings sweetly into your ears. You'll see it in yourself because human brains need to be capable of both values.
 
-Find a ludonomy that makes sense, and pay attention to the _Sprachspiel_ which stretches it to its limit. With any luck, these two should carve out a real manifold for you. However small your sampling of the vast ocean of knowledge, ask of it what it makes possible, more than what it shuts down and denies. Because you don't want to know how it ends, and you can't know how it ends. Stepping back from _disillusion_ to _illusion_ isn't a kind of deception, but rather a greater clarity of what is in and out of your control. 
+Find a ludonomy that makes sense, and pay attention to the _Sprachspiel_ which stretches it to its limit. With any luck, these two should carve out a real manifold for you. However small your sampling of the vast ocean of knowledge, ask of it what it makes possible, more than what it shuts down and denies. Because you don't want to know how it ends, and you can't know how it ends. Stepping back from _disillusion_ to _illusion_ is not a kind of deception, rather a greater clarity of what is in and out of your control. 
 
 I don't particularly care whether life is a game or not. I'm interested in a simpler, more challenging question: how do we play with it?
 
@@ -394,5 +399,9 @@ Images on this page are not mine. Click on them to go to the source.
 
 [#Wojtowicz20]: [From Probability to Consilience: How Explanatory Values Implement Bayesian Reasoning](https://arxiv.org/abs/2006.02359)
 
+
+---
+
+Published 24 October 2022
 
 <!-- Markdeep: --><style class="fallback">body{visibility:hidden;white-space:pre;font-family:monospace}</style><script src="markdeep.min.js" charset="utf-8"></script><script src="https://morgan3d.github.io/markdeep/latest/markdeep.min.js" charset="utf-8"></script><script>window.alreadyProcessedMarkdeep||(document.body.style.visibility="visible")</script>
