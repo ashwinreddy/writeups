@@ -41,13 +41,14 @@
 <body>
     <main>
         <div class="px-4 py-5 my-5 text-center">
-            <a tabindex="0" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-title="The Title" data-bs-content="Eliot insisted the title be three separate words. The original title was He Do the Police in Different Voices, which comes from Charles Dickens' Our Mutual Friend, a hint that this poem is something of a polyvocal monologue.">
-            <h1 class="display-6 title">
-                The Waste Land
-            </h1>
+            <a tabindex="0" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-title="The Title"
+                data-bs-content="Eliot insisted the title be three separate words. The original title was He Do the Police in Different Voices, which comes from Charles Dickens' Our Mutual Friend, a hint that this poem is something of a polyvocal monologue.">
+                <h1 class="display-6 title">
+                    The Waste Land
+                </h1>
             </a>
             <span style="font-variant: small-caps;">
-                T. S. Eliot
+                By T. S. Eliot
                 <br>
                 Published 1922
             </span>
@@ -67,8 +68,7 @@
                 </a>
 
                 <a style="font-family: ETBembo" tabindex="0" data-bs-trigger="focus" data-bs-toggle="popover"
-                    data-bs-title="Dedication"
-                    data-bs-content="From Purgatorio 26, Dante's tribute to Arnaut Daniel.">
+                    data-bs-title="Dedication" data-bs-content="From Purgatorio 26, Dante's tribute to Arnaut Daniel.">
                     <p>
                         For Ezra Pound<br>
                         <i data-bs-toggle="tooltip" data-bs-title="The better craftsman">il miglior fabbro</i>.
@@ -79,16 +79,20 @@
         </div>
         <div class="modal fade" id="aboutModal" tabindex="-1" style="font-family:sans-serif;">
             <div class="modal-dialog modal-dialog-centered">
-              <div class="modal-content">
-                <div class="modal-body">
-                  <p>This project aims to foster appreciation for a landmark poem which, though difficult and intimidating, invites the reader on a spiritual and literary journey with its trail of myriad allusions.</p>
-                  <p>By default, the page only displays the text of the poem. You can enable line numbers, consult Eliot's notes, and read the comments in as linear or non-linear a fashion you like.</p>
-                  <p>Scroll over text in foreign languages to see their translation, and follow the many links to explore the poem's sources.</p>
-                  <p>Enjoy!</p>
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <p>This project aims to foster appreciation for a landmark poem which, though difficult and
+                            intimidating, invites the reader on a spiritual and literary journey with its trail of
+                            myriad allusions.</p>
+                        <p>By default, the page only displays the text of the poem. You can enable line numbers, consult
+                            Eliot's notes, and read the comments in as linear or non-linear a fashion you like.</p>
+                        <p>Scroll over text in foreign languages to see their translation, and follow the many links to
+                            explore the poem's sources.</p>
+                        <p>Enjoy!</p>
+                    </div>
                 </div>
-              </div>
             </div>
-          </div>
+        </div>
         <div class="container-fluid">
             <div class="row justify-content-start align-items-start gx-5">
                 <div class="col-1">
@@ -103,8 +107,10 @@
                             <button type="button" class="btn btn-outline-dark" id="line-numbers">Line No.</button>
                             <button type="button" class="btn btn-outline-dark" data-bs-toggle="offcanvas"
                                 data-bs-target="#offcanvasScrolling">Notes</button>
-                            <button type="button" class="btn btn-outline-dark" id="footnotes" data-bs-toggle="collapse" data-bs-target="#commentary">Comments</button>
-                            <button type="button" class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#aboutModal">About</button>
+                            <button type="button" class="btn btn-outline-dark" id="footnotes" data-bs-toggle="collapse"
+                                data-bs-target="#commentary">Comments</button>
+                            <button type="button" class="btn btn-outline-dark" data-bs-toggle="modal"
+                                data-bs-target="#aboutModal">About</button>
                         </div>
                     </div>
                 </div>
@@ -113,10 +119,15 @@
                         class="scrollspy-example" tabindex="0">
                         <div class="poem">
                             <div id="burial-of-the-dead">
-                                <a tabindex="0" data-bs-toggle="popover" data-bs-trigger="focus" title="The Order for the Burial of the Dead" data-bs-content="From the Book of Common Prayer, the burial rites of the Church of England" style="font-variant: small-caps;">I. The <span class="highlight">Burial</span> of the Dead</a>
+                                <a tabindex="0" data-bs-toggle="popover" data-bs-trigger="focus"
+                                    title="The Order for the Burial of the Dead"
+                                    data-bs-content="From the Book of Common Prayer, the burial rites of the Church of England"
+                                    style="font-variant: small-caps;">I. The <span class="highlight">Burial</span> of
+                                    the Dead</a>
                                 <br>
                                 <div class="line">
-                                    <span class="highlight">April is the cruellest month,</span> breeding</div>
+                                    <span class="highlight">April is the cruellest month,</span> breeding
+                                </div>
                                 <div class="line">
                                     Lilacs out of the dead land, mixing</div>
                                 <div class="line">
@@ -160,7 +171,7 @@
                                 <div class="line">
                                     You cannot say, or guess, for you know only</div>
                                 <div class="line">
-                                    A heap of broken images, where the sun beats,</div>
+                                    A <span class="highlight">heap of broken images,</span>  where the sun beats,</div>
                                 <div class="line" id="line-23">
                                     And the dead tree gives no shelter, the cricket no relief,</div>
                                 <div class="line">
@@ -176,24 +187,26 @@
                                 <div class="line">
                                     Or your shadow at evening rising to meet you;</div>
                                 <div class="line">
-                                    I will show you fear in a handful of dust.</div>
-                                <div data-bs-toggle="tooltip" title="Fresh blows the wind to the homeland. My Irish child, where are you dwelling?">
-                                <div class="line" id="line-31">
-                                    <em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                        Frisch weht der Wind</em>
+                                    <span class="highlight">I will show you fear in a handful of dust.</span>
                                 </div>
-                                <div class="line">
-                                    <em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                    </em><em>Der Heimat zu</em>
-                                </div>
-                                <div class="line">
-                                    <em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                    </em><em>Mein Irisch Kind,</em>
-                                </div>
-                                <div class="line">
-                                    <em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                    </em><em>Wo weilest du?</em>
-                                </div>
+                                <div data-bs-toggle="tooltip"
+                                    title="Fresh blows the wind to the homeland. My Irish child, where are you dwelling?">
+                                    <div class="line" id="line-31">
+                                        <em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            Frisch weht der Wind</em>
+                                    </div>
+                                    <div class="line">
+                                        <em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        </em><em>Der Heimat zu</em>
+                                    </div>
+                                    <div class="line">
+                                        <em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        </em><em>Mein Irisch Kind,</em>
+                                    </div>
+                                    <div class="line">
+                                        <em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        </em><em>Wo weilest du?</em>
+                                    </div>
                                 </div>
                                 <div class="line">
                                     &lsquo;You gave me hyacinths first a year ago;</div>
@@ -209,7 +222,8 @@
                                     Living nor dead, and I knew nothing,</div>
                                 <div class="line">
                                     Looking into the heart of light, the silence.</div>
-                                <div class="line" id="line-42" data-bs-toggle="tooltip" title="Waste and empty the sea.">
+                                <div class="line" id="line-42" data-bs-toggle="tooltip"
+                                    title="Waste and empty the sea.">
                                     <em>Oed&rsquo; und leer das Meer</em>.
                                 </div>
                                 <br>
@@ -290,8 +304,7 @@
                                 <br>
                             </div>
                             <div id="game-of-chess">
-                                <p style="font-variant: small-caps;">
-                                    II. A Game of Chess</p>
+                                <a style="font-variant: small-caps;">II. A Game of Chess</a>
                                 <br>
                                 <div class="line" id="line-77">
                                     The Chair she sat in, like a burnished throne,</div>
@@ -409,7 +422,7 @@
                                     &nbsp; &nbsp;&nbsp;&nbsp; &nbsp;I remember</div>
                                 <div class="line">
                                     Those are pearls that were his eyes.</div>
-                                <div class="line">
+                                <div class="line" id="line-126">
                                     &lsquo;Are you alive, or not? Is there nothing in your head?&rsquo; &nbsp;
                                     &nbsp;<br>
                                 </div>
@@ -452,7 +465,7 @@
                                     And if it rains, a closed car at four.</div>
                                 <div class="line">
                                     And we shall play a game of chess,</div>
-                                <div class="line">
+                                <div class="line" id="line-138">
                                     Pressing lidless eyes and waiting for a knock upon the door.</div>
 
                                 <br>
@@ -533,9 +546,7 @@
                                 <br>
                             </div>
                             <div id="fire-sermon">
-                                <p style="font-variant: small-caps;">
-                                    III. The Fire Sermon<br>
-                                </p>
+                                <a style="font-variant: small-caps;">III. The Fire Sermon</a>
                                 <br>
                                 <div class="line">
                                     &nbsp; The river&rsquo;s tent is broken: the last fingers of leaf</div>
@@ -632,7 +643,7 @@
                                     Turn upward from the desk, when the human engine waits</div>
                                 <div class="line">
                                     Like a taxi throbbing waiting,</div>
-                                <div class="line">
+                                <div class="line" id="line-218">
                                     I Tiresias, though blind, throbbing between two lives,</div>
                                 <div class="line">
                                     Old man with wrinkled female breasts, can see</div>
@@ -868,7 +879,7 @@
                                     &nbsp;la
                                     la</div>
                                 <br>
-                                <div class="line">
+                                <div class="line" id="line-307">
                                     To Carthage then I came</div>
 
                                 <br>
@@ -890,8 +901,8 @@
                                 <br>
                             </div>
                             <div id="death-by-water">
-                                <p style="font-variant: small-caps;">
-                                    IV. Death by Water</p>
+                                <a style="font-variant: small-caps;">
+                                    IV. Death by Water</a>
 
                                 <br>
                                 <div class="line">
@@ -925,10 +936,9 @@
                                 <br>
                                 <br>
                                 <div id="what-the-thunder-said">
-                                    <p style="font-variant: small-caps;">
-                                        V. What the Thunder
-                                        Said<br>
-                                    </p>
+                                    <a style="font-variant: small-caps;">
+                                        V. What the Thunder Said
+                                    </a>
                                     <br>
                                     <div class="line">
                                         After the torchlight red on sweaty faces</div>
@@ -1189,27 +1199,82 @@
                 </div>
                 <div class="col-4">
                     <div class="collapse" id="commentary">
-                        <div class="card card-body">
-                            <p>
-                                We open on April, usually tied to Easter and rebirth (see Chaucer's <a href="https://www.poetryfoundation.org/poems/43926/the-canterbury-tales-general-prologue">prologue</a> to the <i>The Canterbury Tales</i>), but here a time of burial, something Frazer discusses in <i>The Golden Bough</i> in connection with human sacrifices intended to revive dying gods as part of fertility rites.
-                            </p>
+                    <div class="row row-cols-auto g-4">
+                        <div class="col">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Stanza I</h5>
+                                    <p class="card-text">
+                                        We open on April, usually tied to Easter and rebirth (see Chaucer's <a href="https://www.poetryfoundation.org/poems/43926/the-canterbury-tales-general-prologue">prologue</a> to the <i>The Canterbury Tales</i>), but here a time of burial, something Frazer discusses in <i>The Golden Bough</i> in connection with human sacrifices intended to revive dying gods as part of fertility rites.
+                                        We are introduced to the first voice, Marie, an acquaintance of Eliot. 
+                                    </p>
+                                </div>
+                            </div>
                         </div>
+                        <div class="col">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Stanza II</h5>
+                                    <p class="card-text">
+                                        A vision of a dry desolation.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     </div>
                 </div>
             </div>
     </main>
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"
+        style="font-family: sans-serif;">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Eliot's Notes</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>
+                        Eliot added these notes to the New York edition published by Boni & Liveright in December 1922,
+                        apparently at the request of Liveright, who wanted to bulk out the volume.
+                    <blockquote class="blockquote">
+                        <p>The notes to The Waste Land! I had intended at first only to put down all the references for
+                            my earlier quotations, with a view to spiking the guns of critics of my earlier poems who
+                            had accused me of plagiarism. Then, when it came to print The Waste Land as a little book .
+                            . . it was discovered that the poem was inconveniently short, so I set to work to expand the
+                            notes, in order to provide a few more pages of printed matter, with the result that they
+                            became the remarkable exposition of bogus scholarship that is still on view today. I have
+                            sometimes thought of getting rid of these notes; but now they can never be unstuck. They
+                            have had almost greater popularity than the poem itself -- anyone who bought my book of
+                            poems, and found that the Notes to The Waste Land were not in it, would demand his money
+                            back . . . My notes stimulated the wrong kind of interest among the seekers of sources. It
+                            was just, no doubt, that I should have payed tribute to the work of Miss Jessie Weston; but
+                            I regret having sent so many enquirers off on a wild goose chase after Tarot cards and the
+                            Holy Grail.</p>
+                    </blockquote>
+                    <figcaption class="blockquote-footer">
+                        <cite>“The Frontiers of Criticism” (1956), in T.S. Eliot, On Poetry and Poets (1957), pp.
+                            109-10.</cite>
+                    </figcaption>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="offcanvas offcanvas-end" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1"
         id="offcanvasScrolling" aria-labelledby="notesLabel">
         <div class="offcanvas-header">
-            <h5 class="offcanvas-title" id="offcanvasExampleLabel"><a tabindex="0" role="button"
-                    data-bs-toggle="popover" data-bs-trigger="focus" data-bs-title="Eliot's Notes"
-                    data-bs-content="Eliot added these notes to the New York edition published by Boni & Liveright in December 1922, apparently at the request of Liveright, who wanted to bulk out the volume. “The notes to The Waste Land! I had intended at first only to put down all the references for my earlier quotations, with a view to spiking the guns of critics of my earlier poems who had accused me of plagiarism. Then, when it came to print The Waste Land as a little book . . . it was discovered that the poem was inconveniently short, so I set to work to expand the notes, in order to provide a few more pages of printed matter, with the result that they became the remarkable exposition of bogus scholarship that is still on view today. I have sometimes thought of getting rid of these notes; but now they can never be unstuck. They have had almost greater popularity than the poem itself -- anyone who bought my book of poems, and found that the Notes to The Waste Land were not in it, would demand his money back . . . My notes stimulated the wrong kind of interest among the seekers of sources. It was just, no doubt, that I should have payed tribute to the work of Miss Jessie Weston; but I regret having sent so many enquirers off on a wild goose chase after Tarot cards and the Holy Grail” (“The Frontiers of Criticism” (1956), in T.S. Eliot, On Poetry and Poets (1957), pp. 109-10)."
-                    class="offcanvas-title title" id="notesLabel">Notes on the Waste Land</a></h5>
+            <h5 class="offcanvas-title" id="offcanvasExampleLabel"><a tabindex="0" role="button" data-bs-toggle="modal"
+                    data-bs-target="#exampleModal" class="offcanvas-title title" id="notesLabel">Notes on the Waste
+                    Land</a></h5>
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <div class="offcanvas-body" style="font-family: ETBembo;">
             <p>Not only the title, but the plan and a good deal of the incidental symbolism of the poem were suggested
-                by Miss Jessie L. Weston's book on the Grail legend: <a href="https://en.wikisource.org/wiki/From_Ritual_to_Romance"><i>From Ritual to Romance</i></a> (Cambridge). Indeed,
+                by Miss Jessie L. Weston's book on the Grail legend: <a
+                    href="https://en.wikisource.org/wiki/From_Ritual_to_Romance"><i>From Ritual to Romance</i></a>
+                (Cambridge). Indeed,
                 so deeply am I indebted, Miss Weston's book will elucidate the difficulties of the poem much better than
                 my notes can do; and I recommend it (apart from the great interest of the book itself) to any who think
                 such elucidation of the poem worth the trouble. To another work of anthropology I am indebted in
@@ -1220,11 +1285,15 @@
             <p style="font-variant: small-caps;">
                 I. The Burial of the Dead</p>
             <ul class="list-unstyled">
-                <li><a href="#line-20">Line 20.</a> Cf. <a href="https://www.biblegateway.com/passage/?search=Ezekiel+2%3A1">Ezekiel II, i</a>.</li>
-                <li><a href="#line-23">23.</a> Cf. <a href="https://www.biblegateway.com/passage/?search=Ecclesiastes+12%3A5">Ecclesiastes XII, v</a>.</li>
+                <li><a href="#line-20">Line 20.</a> Cf. <a
+                        href="https://www.biblegateway.com/passage/?search=Ezekiel+2%3A1">Ezekiel II, i</a>.</li>
+                <li><a href="#line-23">23.</a> Cf. <a
+                        href="https://www.biblegateway.com/passage/?search=Ecclesiastes+12%3A5">Ecclesiastes XII, v</a>.
+                </li>
                 <li><a href="#line-31">31.</a> V. Tristan und Isolde, I, verses 5-8.</li>
                 <li><a href="#line-42">42.</a> Id. III, verse 24.</li>
-                <li><a href="#line-46">46.</a> I am not familiar with the exact constitution of the Tarot pack of cards, from which I have
+                <li><a href="#line-46">46.</a> I am not familiar with the exact constitution of the Tarot pack of cards,
+                    from which I have
                     obviously departed to suit my own convenience. The Hanged Man, a member of the traditional pack,
                     fits my purpose in two ways: because he is associated in my mind with the Hanged God of Frazer, and
                     because I associate him with the hooded figure in the passage of the disciples to Emmaus in Part V.
@@ -1233,12 +1302,15 @@
                     associate, quite arbitrarily, with the Fisher King himself.</li>
                 <li>
                     <a href="#line-60">60.</a> Cf. Baudelaire:
-                    <p data-bs-toggle="tooltip" title="Ant-seething city, city full of dreams, / Where ghosts by daylight tug the passer's sleeve">
+                    <p data-bs-toggle="tooltip"
+                        title="Ant-seething city, city full of dreams, / Where ghosts by daylight tug the passer's sleeve">
                         "Fourmillante cité, cité pleine de rêves, <br>
                         "Où le spectre en plein jour raccroche le passant."
                     </p>
                 </li>
-                <li><a href="#line-63">63.</a> Cf. <a href="https://digitaldante.columbia.edu/dante/divine-comedy/inferno/inferno-3/">Inferno III</a>, 55-57:
+                <li><a href="#line-63">63.</a> Cf. <a
+                        href="https://digitaldante.columbia.edu/dante/divine-comedy/inferno/inferno-3/">Inferno III</a>,
+                    55-57:
                     <p>
                         “si lunga tratta <br>
                         di gente, ch'io non avrei mai creduto <br>
@@ -1246,7 +1318,9 @@
                     </p>
                 </li>
                 <li>
-                    <a href="#line-64">64.</a> Cf. <a href="https://digitaldante.columbia.edu/dante/divine-comedy/inferno/inferno-4/">Inferno IV</a>, 25-27:
+                    <a href="#line-64">64.</a> Cf. <a
+                        href="https://digitaldante.columbia.edu/dante/divine-comedy/inferno/inferno-4/">Inferno IV</a>,
+                    25-27:
                     <p>
                         “Quivi, secondo che per ascoltare, <br>
                         non avea pianto ma' che de sospiri, <br>
@@ -1270,15 +1344,21 @@
                     <a href="#line-77">77.</a> Cf. <i>Antony and Cleopatra</i>, II, ii, l. 190.
                 </li>
                 <li>
-                    <a href="#line-92">92.</a> Laquearia. V. <a href="http://data.perseus.org/citations/urn:cts:latinLit:phi0690.phi003.perseus-lat1:1.723"><i>Aeneid</i>, I, 726</a>: <br>
+                    <a href="#line-92">92.</a> Laquearia. V. <a
+                        href="http://data.perseus.org/citations/urn:cts:latinLit:phi0690.phi003.perseus-lat1:1.723"><i>Aeneid</i>,
+                        I, 726</a>: <br>
                     dependent lychni laquearibus aureis <br>
                     incensi, et noctem flammis funalia vincunt
                 </li>
                 <li>
-                    <a href="#line-98">98.</a> Sylvan scene. V. Milton, <a href="https://milton.host.dartmouth.edu/reading_room/pl/book_4/text.shtml"><i>Paradise Lost</i>, IV</a>, 140.
+                    <a href="#line-98">98.</a> Sylvan scene. V. Milton, <a
+                        href="https://milton.host.dartmouth.edu/reading_room/pl/book_4/text.shtml"><i>Paradise Lost</i>,
+                        IV</a>, 140.
                 </li>
                 <li>
-                    <a href="#line-99">99.</a> V. Ovid, <a href="http://data.perseus.org/citations/urn:cts:latinLit:phi0959.phi006.perseus-lat1:6.412-6.503"><i>Metamorphoses</i>, VI, Philomela</a>.
+                    <a href="#line-99">99.</a> V. Ovid, <a
+                        href="http://data.perseus.org/citations/urn:cts:latinLit:phi0959.phi006.perseus-lat1:6.412-6.503"><i>Metamorphoses</i>,
+                        VI, Philomela</a>.
                 </li>
                 <li>
                     <a href="#line-100">100.</a> Cf. <a href="#line-204">Part III, l. 204</a>.
@@ -1290,10 +1370,10 @@
                     <a href="#line-118">118.</a> Cf. Webster: “Is the wind in that door still?”
                 </li>
                 <li>
-                    126. Cf. Part I, l. 37, 48.
+                    <a href="#line-126">126.</a> Cf. Part I, l. 37, 48.
                 </li>
                 <li>
-                    138. Cf. The game of chess in Middleton's <i>Women Beware Women</i>.
+                    <a href="#line-138">138.</a> Cf. The game of chess in Middleton's <i>Women Beware Women</i>.
                 </li>
             </ul>
             <p style="font-variant: small-caps;">
@@ -1316,16 +1396,23 @@
                     “Where all shall see her naked skin...”
                 </li>
                 <li>
-                    199. I do not know the origin of the ballad from which these lines are taken: it was reported to me from Sydney, Australia.
+                    199. I do not know the origin of the ballad from which these lines are taken: it was reported to me
+                    from Sydney, Australia.
                 </li>
                 <li>
                     202. V. Verlaine, <i>Parsifal</i>.
                 </li>
                 <li>
-                    210. The currants were quoted at a price “carriage and insurance free to London”; and the Bill of Lading etc. were to be handed to the buyer upon payment of the sight draft.
+                    210. The currants were quoted at a price “carriage and insurance free to London”; and the Bill of
+                    Lading etc. were to be handed to the buyer upon payment of the sight draft.
                 </li>
                 <li>
-                    218. Tiresias, although a mere spectator and not indeed a “character,” is yet the most important personage in the poem, uniting all the rest. Just as the one-eyed merchant, seller of currants, melts into the Phoenician Sailor, and the latter is not wholly distinct from Ferdinand Prince of Naples, so all the women are one woman, and the two sexes meet in Tiresias. What Tiresias sees, in fact, is the substance of the poem. The whole passage from Ovid is of great anthropological interest: <br>
+                    <a href="#line-218">218.</a> Tiresias, although a mere spectator and not indeed a “character,” is
+                    yet the most important personage in the poem, uniting all the rest. Just as the one-eyed merchant,
+                    seller of currants, melts into the Phoenician Sailor, and the latter is not wholly distinct from
+                    Ferdinand Prince of Naples, so all the women are one woman, and the two sexes meet in Tiresias. What
+                    Tiresias sees, in fact, is the substance of the poem. The whole passage from Ovid is of great
+                    anthropological interest: <br>
                     ‘...Cum Iunone iocos et maior vestra profecto est <br>
                     Quam, quae contingit maribus,’ dixisse, ‘voluptas.’ <br>
                     Illa negat; placuit quae sit sententia docti <br>
@@ -1347,7 +1434,8 @@
                     Scire futura dedit poenamque levavit honore.
                 </li>
                 <li>
-                    221. This may not appear as exact as Sappho's lines, but I had in mind “longshore” or “dory” fisherman, who returns at nightfall.
+                    221. This may not appear as exact as Sappho's lines, but I had in mind “longshore” or “dory”
+                    fisherman, who returns at nightfall.
                 </li>
                 <li>
                     253. V. Goldsmith, the song in <i>The Vicar of Wakefield</i>.
@@ -1356,42 +1444,67 @@
                     257. V. <i>The Tempest</i>, as above.
                 </li>
                 <li>
-                    264. The interior of St. Magnus Martyr is to my mind one of the finest among Wren's interiors. See <i>The Proposed Demolition of Nineteen City Churches</i>: (P. S. King & Sons, Ltd.)
+                    264. The interior of St. Magnus Martyr is to my mind one of the finest among Wren's interiors. See
+                    <i>The Proposed Demolition of Nineteen City Churches</i>: (P. S. King & Sons, Ltd.)
                 </li>
                 <li>
-                    266. The Song of the (three) Thames-daughters begins here. From line 292 to 306 inclusive they speak in turn. V. <i>Götterdämmerung</i>, III, i: the Rhine-daughters.
+                    266. The Song of the (three) Thames-daughters begins here. From line 292 to 306 inclusive they speak
+                    in turn. V. <i>Götterdämmerung</i>, III, i: the Rhine-daughters.
                 </li>
                 <li>
                     279. V. Froude, <i>Elizabeth</i>, Vol. I, ch. iv, letter of De Quadra to Philip of Spain: <br>
-                    “In the afternoon we were in a barge, watching the games on the river. (The queen) was alone with Lord Robert and myself on the poop, when they began to talk nonsense, and went so far that Lord Robert at last said, as I was on the spot there was no reason why they should not be married if the queen pleased.”
+                    “In the afternoon we were in a barge, watching the games on the river. (The queen) was alone with
+                    Lord Robert and myself on the poop, when they began to talk nonsense, and went so far that Lord
+                    Robert at last said, as I was on the spot there was no reason why they should not be married if the
+                    queen pleased.”
                 </li>
                 <li>
-                    293. Cf. <i>Purgatorio</i>, V, 133: <br>
+                    293. Cf. <a
+                        href="https://digitaldante.columbia.edu/dante/divine-comedy/purgatorio/purgatorio-5/"><i>Purgatorio</i>,
+                        V</a>, 133: <br>
                     “Ricorditi di me, che son la Pia; <br>
                     “Siena mi fe’, disfecemi Maremma.”
                 </li>
                 <li>
-                    307. V. St. Augustine's <i>Confessions</i>: “to Carthage then I came, where a cauldron of unholy loves sang all about mine ears.”
+                    <a href="#line-307">307.</a> V. St. Augustine's <i>Confessions</i>: “to Carthage then I came, where
+                    a cauldron of unholy loves sang all about mine ears.”
                 </li>
                 <li>
-                    308. The complete text of the Buddha's Fire Sermon (which corresponds in importance to the Sermon on the Mount) from which these words are taken, will be found translated in the late Henry Clarke Warren's <i>Buddhism in Translation</i> (Harvard Oriental Series). Mr. Warren was one of the great pioneers of Buddhist studies in the Occident.
+                    308. The complete text of the Buddha's Fire Sermon (which corresponds in importance to the Sermon on
+                    the Mount) from which these words are taken, will be found translated in the late Henry Clarke
+                    Warren's <i>Buddhism in Translation</i> (Harvard Oriental Series). Mr. Warren was one of the great
+                    pioneers of Buddhist studies in the Occident.
                 </li>
                 <li>
-                    309. From St. Augustine's <i>Confessions</i> again. The collocation of these two representatives of eastern and western ascetism, as the culmination of this part of the poem, is not an accident.
+                    309. From St. Augustine's <i>Confessions</i> again. The collocation of these two representatives of
+                    eastern and western ascetism, as the culmination of this part of the poem, is not an accident.
                 </li>
             </ul>
             <p style="font-variant: small-caps;">
                 V. What the Thunder Said</p>
-            In the first part of Part V three themes are employed: the journey to Emmaus, the approach to the Chapel Perilous (see Miss Weston's book) and the present decay of eastern Europe.
+            In the first part of Part V three themes are employed: the journey to Emmaus, the approach to the Chapel
+            Perilous (see Miss Weston's book) and the present decay of eastern Europe.
             <ul class="list-unstyled">
-                <li>357. This is <i>Turdus aonalaschkae pallasii</i>, the hermit-thrush which I have heard in Quebec County. Chapman says (<i>Handbook of Birds of Eastern North America</i>) “it is most at home in secluded woodland and thickety retreats... Its notes are not remarkable for variety or volume, but in purity and sweetness of tone and exquisite modulation they are unequalled.” Its “water-dripping song” is justly celebrated.</li>
-                <li>360. The following lines were stimulated by the account of one of the Antarctic expeditions (I forget which, but I think one of Shackleton's): it was related that the party of explorers, at the extremity of their strength, had the constant delusion that there was one more member than could actually be counted.</li>
+                <li>357. This is <i>Turdus aonalaschkae pallasii</i>, the hermit-thrush which I have heard in Quebec
+                    County. Chapman says (<i>Handbook of Birds of Eastern North America</i>) “it is most at home in
+                    secluded woodland and thickety retreats... Its notes are not remarkable for variety or volume, but
+                    in purity and sweetness of tone and exquisite modulation they are unequalled.” Its “water-dripping
+                    song” is justly celebrated.</li>
+                <li>360. The following lines were stimulated by the account of one of the Antarctic expeditions (I
+                    forget which, but I think one of Shackleton's): it was related that the party of explorers, at the
+                    extremity of their strength, had the constant delusion that there was one more member than could
+                    actually be counted.</li>
                 <li>
                     366-376. Cf. Hermann Hesse, <i>Blick ins chaos</i>:
-                    “Schon ist halb Europa, schon ist zumindest der halbe Osten Europas auf dem Wege zum Chaos, fährt betrunken im heiligem Wahn am Abgrund entlang und singt dazu, singt betrunken und hymnisch wie Dmitri Karamasoff sang. Ueber diese Lieder lacht der Bürger beleidigt, der Heilige und Seher hört sie mit Tränen.”
+                    “Schon ist halb Europa, schon ist zumindest der halbe Osten Europas auf dem Wege zum Chaos, fährt
+                    betrunken im heiligem Wahn am Abgrund entlang und singt dazu, singt betrunken und hymnisch wie
+                    Dmitri Karamasoff sang. Ueber diese Lieder lacht der Bürger beleidigt, der Heilige und Seher hört
+                    sie mit Tränen.”
                 </li>
                 <li>
-                    401. “Datta, dayadhvam, damyata” (Give, sympathise, control). The fable of the meaning of the Thunder is found in the <i>Brihadaranyaka—Upanishad</i>, 5, 1. A translation is found in Deussen's <i>Sechsig Upanishads des Veda</i>, p. 489.
+                    401. “Datta, dayadhvam, damyata” (Give, sympathise, control). The fable of the meaning of the
+                    Thunder is found in the <i>Brihadaranyaka—Upanishad</i>, 5, 1. A translation is found in Deussen's
+                    <i>Sechsig Upanishads des Veda</i>, p. 489.
                 </li>
                 <li>
                     407. Cf. Webster, <i>The White Devil</i>, V, vi: <br>
@@ -1400,17 +1513,26 @@
                     Make a thin curtain for your epitaphs.”
                 </li>
                 <li>
-                    411. Cf. <i>Inferno</i>, XXXIII, 46: <br>
+                    411. Cf. <a
+                        href="https://digitaldante.columbia.edu/dante/divine-comedy/inferno/inferno-33/"><i>Inferno</i>,
+                        XXXIII</a>, 46: <br>
                     “ed io sentii chiavar l’uscio di sotto <br>
                     all’orribile torre.” <br>
                     Also F. H. Bradley, <i>Appearance and Reality</i>, p. 306. <br>
-                    “My external sensations are no less private to myself than are my thoughts or my feelings. In either case my experience falls within my own circle, a circle closed on the outside; and, with all its elements alike, every sphere is opaque to the others which surround it... In brief, regarded as an existence which appears in a soul, the whole world for each is peculiar and private to that soul.”
+                    “My external sensations are no less private to myself than are my thoughts or my feelings. In either
+                    case my experience falls within my own circle, a circle closed on the outside; and, with all its
+                    elements alike, every sphere is opaque to the others which surround it... In brief, regarded as an
+                    existence which appears in a soul, the whole world for each is peculiar and private to that soul.”
                 </li>
                 <li>
-                    424. V. Weston: <i>From Ritual to Romance</i>; chapter on the Fisher King.
+                    424. V. Weston: <i>From Ritual to Romance</i>; <a
+                        href="https://en.wikisource.org/wiki/From_Ritual_to_Romance/Chapter_IX">chapter on the Fisher
+                        King</a>.
                 </li>
                 <li>
-                    427. V. <i>Purgatorio</i>, XXVI, 148. <br>
+                    427. V. <a
+                        href="https://digitaldante.columbia.edu/dante/divine-comedy/purgatorio/purgatorio-26/"><i>Purgatorio</i>,
+                        XXVI</a>, 148. <br>
                     “‘Ara vos prec, per aquella valor <br>
                     ‘que vos guida al som de l’escalina, <br>
                     ‘sovegna vos a temps de ma dolor.’ <br>
@@ -1426,7 +1548,8 @@
                     431. V. Kyd's <i>Spanish Tragedy</i>.
                 </li>
                 <li>
-                    433. Shantih. Repeated as here, a formal ending to an Upanishad. “The Peace which passeth understanding” is a feeble translation of the content of the word.
+                    433. Shantih. Repeated as here, a formal ending to an Upanishad. “The Peace which passeth
+                    understanding” is a feeble translation of the content of the word.
                 </li>
             </ul>
         </div>
@@ -1434,7 +1557,8 @@
 
     <footer class="footer mt-auto py-3 bg-light">
         <div class="container" style="font-family: sans-serif;">
-            <span class="text-muted">Inspired by <a href="https://digitaldante.columbia.edu/"><i>Digital Dante</i></a></span>
+            <span class="text-muted">Inspired by <a href="https://digitaldante.columbia.edu/"><i>Digital
+                        Dante</i></a></span>
         </div>
     </footer>
 
@@ -1456,7 +1580,7 @@
 
         });
 
-        $('#footnotes').click(function() {
+        $('#footnotes').click(function () {
             $('.highlight').toggleClass('mark');
         });
     </script>
