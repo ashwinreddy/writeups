@@ -7,15 +7,15 @@
 
 # Communication
 
-In everyday talk, information roughly means the semantic content conveyed in a message. If you get a text message about a dinner event, the information is the time, place, and dress code. Contrary to this view, shown most [clearly](https://www.cs.bham.ac.uk/research/projects/cogaff/misc/austen-info.html) in the novels of Jane Austen, stands Claude Shannon, the father of information theory.
+For most of us, information is the content of a message. A text message about a dinner event informs you of the time, venue, and dress code. In contrast to this view, well [understood](https://www.cs.bham.ac.uk/research/projects/cogaff/misc/austen-info.html) by novelist Jane Austen, stands mathematician-engineer Claude Shannon, the father of information theory.
 
 > "The fundamental problem of communication is that of reproducing at one point either exactly or approximately
 > a message selected at another point. Frequently the messages have _meaning_; that is they refer
 > to or are correlated according to some system with certain physical or conceptual entities. These semantic
 > aspects of communication are irrelevant to the engineering problem. The significant aspect is that the actual
 > message is one _selected from a set_ of possible messages. The system must be designed to operate for each
-> possible selection, not just the one which will actually be chosen since this is unknown at the time of design."
->                                                              -- _A Mathematical Theory of Communication_ (1948)
+> possible selection, not just the one which will actually be chosen since this is unknown at the time of design.[^paper]"
+>
 
 *******************************************************************************************************
 * +--------------------+  +-------------+         +---+           +----------+  +-------------+       *          
@@ -30,55 +30,62 @@ In everyday talk, information roughly means the semantic content conveyed in a m
 *                                               +--------+                                            *
 *******************************************************************************************************
 
-Shannon asserts the semantic meaning is not the focus of the engineering task. As long as the transmitter and receiver know which symbols are in use, we can be agnostic to the meanings of the symbols. But how can we analyze information, if it is not in the sense of the message?
+Shannon asserts the semantic meaning is not the focus of the engineering task. As long as the transmitter and receiver agree on the symbols, they can be agnostic to the meanings of the symbols. But how can we analyze information, if it is not in the sense of the message?
 
-For communication to be useful, the message received has to do work, changing the receiver's state in some way. Accordingly, more information is received if the message does more work or the receiver's state changes more. If the receiver gets a message which was already known or incorporated, no information was received. To quantify information, we need to model the receiver's expectations. 
+For communication to be useful, the message received has to do work, change the receiver's state in some way. Thus, more information implies a greater change in the receiver's state. If the receiver already knew the information, nothing was received. To quantify information is to model receiver expectations. 
 
-The metaphor used in information theory is that information is surprise. Let's take Wordle as an example since 3Blue1Brown did a nice [analysis](https://www.youtube.com/watch?v=v68zYyaEmEA) from an information-theoretic standpoint. If you find out that the word has the letters _E_ and _A_, then you are not surprised because you know lots of English words have these letters. Consequently, you gained little information about the word in question. On the other hand, a word containing _Z_ is surprising, hence informative, because you can focus on a relatively small set of words now. The more probable a fact is, the less information it provides.
+In short, information is surprise. Take Wordle as an example.[^3b1b] Knowing a word has _E_ or _A_ is not surprising or informative. Lots of words have these letters. On the other hand, you would be surprised to learn the word has a _Z_ because there are much fewer words to consider now.
 
-The thesis that information is surprise is the point on which all of information theory turns. Once we have a strong grip on the notion of and notation for surprise -- which we're taking from [#Kirsh2021] -- the rest unfolds smoothly.
+Information as surprise is the crux of information theory. Get a strong grip on this notion and its notation and the rest unfolds smoothly.[^notation]
 
 # Surprise
 
-Information theory is an extension of probability, which gives us the basic tools to think about how surprising an event is. Since the semantic aspects don't matter, we simply label the symbols used by the transmitter and receiver with an **alphabet** $\mathcal{X}$ and start applying probabilistic tools. If you need a concrete example, you can take $\mathcal{X}$ to be the English alphabet.
+Information theory uses probability to determine how surprising an event is. First, though, we must specify the symbols used by the transmitter and receiver. Call it an **alphabet** $\mathcal{X}$, for example, the English alphabet.
 
-We might guess the surprise or unexpectedness of an event with probability $p$ is $s(p)=\frac{1}{p}$. This is not a bad start, but Shannon saw that the logarithm of this quantity was a better measure because if we have two independent events, then we expect their information should add up. Concretely, we'd like to have
+Suppose the surprise or unexpectedness of an event with probability $p$ is $s(p)=\frac{1}{p}$. Shannon argues the logarithm of this quantity is a better measure because the information from independent events should add together. For an event with probability $p_1$ and another, independent event with probability $p_2$, stipulate that
 
 \begin{equation}
 \label{additivity}
-s(p_1 p_2) = s(p_1) + s(p_2),
+s\left(p_1 p_2\right) = s(p_1) + s(p_2),
 \end{equation}
 
-which entails that $s(p) = k \log(p)$ for some $k$.[^cauchy] Conveniently, if we pick $k=-1$, then $s(p)$ is both a function of $\frac{1}{p}$ and obeys equation [additivity] as desired.
+which entails that $s(p) = k \log(p)$ for some $k$.[^cauchy] If $k=-1$, then $s(p)$ is both a function of $\frac{1}{p}$ and obeys equation [additivity].
 
 Surprise
-: For an event with probability $p$, the surprise is $$s(p) = \log\left( \frac{1}{p}\right).$$
+: For an event with probability $p$, the surprise is $$s(p) = \log_b\left( \frac{1}{p}\right).$$
 
 !!! Tip
-    You are free to choose any base whatsoever for the $\log$ since it only changes the value of $k$ by a constant factor. For mathematical analysis, the natural log is common. In many contexts, we choose to use base 2, in which case the unit of surprise is bits. Think of 1 bit as the information in a fair coin flip.
+    Choose $b$ as you like, since it only changes $k$ by a constant factor. Typical choices are $e$ for mathematical analysis and 2 or 10 for practical applications. With base 2, the unit of surprise is bits, so that 1 bit is the information in a fair coin flip.
 
-This definition yields a number of intuitive properties.
 
-- Information is always non-negative: $s(p) \geqslant 0$.
-- We deduce that a guaranteed event ($p=1$) gives no surprise, and that in the opposite direction, as $p$ -> 0, $s$ -> $\infty$.
-- $s(p)$ monotonically increases as $p$ decreases. We are more surprised as an event becomes less likely.
+To make this concrete, look at a plot of $s(p)$ against $p$.
 
 ![Figure [surprise]: Surprise as a Quantiative Measure](https://i.imgur.com/EnP5VHz.png)
 
-In a communication system, the receiver could choose to send any of the symbols in $\mathcal{X}$, but surprise is a measure only of one symbol. We need to measure the surprise over the entire alphabet.
+
+
+1. Information is always non-negative. $$s(p) \geqslant 0.$$
+
+2. There is no surprise for a guranteed event. $$s(1) = 0.$$
+
+3. There is infinite surprise for an impossible event. $$s(0) = \infty.$$
+
+4. $s(p)$ monotonically increases as $p$ decreases. We are more surprised as an event becomes less likely.
+
+
+
+Surprise is a function of only a single symbol, but the receiver is free to use all the symbols in $\mathcal{X}$. We need to construct a measure of surprise over the entire alphabet.
 
 # Entropy
 
-We consider from the outset that the receiver and transmitter don't necessarily share the same probability distribution for the symbols. Speakers and listeners don't always share the same expectations. So we'll say that the random variable $X$, representing a symbol from the alphabet, has a true distribution $p$, and the receiver has their own supposed distribution $q$, which could be anything. 
-
-The first step is to try to measure the surprise when $p$ and $q$ communicate.
+The receiver and transmitter don't necessarily share the same probability distribution for the symbols. The random variable $X$, representing a symbol from the alphabet, has a true distribution $p$, while the receiver supposes it has a distribution $q$, which may be the same or different. What's the surprise, in bits, when $p$ and $q$ communicate?
 
 Cross-Entropy
 : The cross-entropy $H_q$ of a random variable $X$ with true distribution $p$ and assumed distribution $q$ is given by the expected value $$H_q[X] = H\big(p(X) \parallel q(X)\big) = \mathop{\mathbb{E}}_{x \sim  p(x)}\big[s\big(q(x)\big)\big]$$
 
-Cross-entropy is an expression of surprise, so it is also measured in bits. To understand cross-entropy, it's best to break down the expression step by step.
+To understand cross-entropy, break down the expression step by step.
 
-|Symbol|Meaning|
+|Symbol|Action|
 |------|-------|
 |$x \sim p(x)$|Transmitter samples a message from $p$ and sends it|
 |$q(x)$|Receiver decides on message likelihood|
@@ -103,7 +110,7 @@ which shows how to compute it more easily.
 !!! WARNING
     Some authors define entropy with an integral $H[X] = -\int_{\mathcal{X}} f(x) \log f(x) \,\mathrm{d}x$. This is called differential entropy and it shares some, but not all, properties of discrete entropy, which we're discussing now. 
 
-Eqn. [ent-def] and eqn. [classicdef] are equivalent, but I've delayed showing the latter because it completely buries the notion of surprise. The story goes that John von Neumann suggested Shannon call the quantity entropy for its resemblance with a similar formula in thermodynamics. Playing on that notion, it is reasonable that entropy attains its maximimum of $\log |\mathcal{X}|$ for a uniform distribution over $\mathcal{X}$, which represents maximum disorder.
+Eqn. [ent-def] and eqn. [classicdef] are equivalent, but I've delayed showing the latter because it buries the notion of surprise. The story goes that John von Neumann suggested Shannon call the quantity entropy for its resemblance with a similar formula in thermodynamics. Shannon entropy attains its maximimum of $\log |\mathcal{X}|$ for a uniform distribution over $\mathcal{X}$, which represents maximum disorder.
 
 The simplest entropy calculation we can do is for a random variable $X \sim \mathsf{Bernoulli}(p)$ where $p$ is the probability of a heads.
 
@@ -244,9 +251,15 @@ Which concludes our presentation of the basic results that Shannon first showed,
 
 # Notes
 
-[#Kirsh2021]: [A Practical & Unified Notation for Information-Theoretic Quantities in ML](https://arxiv.org/abs/2106.12062).
+[^paper]: _A Mathematical Theory of Communication_ (1948). [Source](https://people.math.harvard.edu/~ctm/home/text/others/shannon/entropy/entropy.pdf)
+
+[^3b1b]: 3Blue1Brown did a nice [analysis](https://www.youtube.com/watch?v=v68zYyaEmEA) from an information-theoretic standpoint.
+
+[^notation]: [A Practical & Unified Notation for Information-Theoretic Quantities in ML](https://arxiv.org/abs/2106.12062).
 
 [^cauchy]: The equation goes by the name of _Cauchy logarithmic functional equation_. 
+
+
 
 <!-- <style class="fallback">body{visibility:hidden}</style><script>markdeepOptions={tocStyle:'medium'};</script> -->
 
