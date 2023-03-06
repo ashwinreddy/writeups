@@ -41,9 +41,11 @@
 <body>
     <main>
         <div class="px-4 py-5 my-5 text-center">
+            <a tabindex="0" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-title="The Title" data-bs-content="Eliot insisted the title be three separate words. The original title was He Do the Police in Different Voices, which comes from Charles Dickens' Our Mutual Friend, a hint that this poem is something of a polyvocal monologue.">
             <h1 class="display-6 title">
                 The Waste Land
             </h1>
+            </a>
             <span style="font-variant: small-caps;">
                 T. S. Eliot
                 <br>
@@ -54,7 +56,7 @@
                 <a tabindex="0" style="text-align:justify" data-bs-trigger="focus" data-bs-toggle="popover"
                     data-bs-title="Epigraph"
                     data-bs-content="This is one of the tall stories of Trimalchio in the Satyricon of Petronius Arbiter, a first-century novel of which substantial fragments survive. The Sibyl was granted immortality but not youth. This epigraph replaced one from Conrad's Heart of Darkness, which Eliot dropped on Pound's advice.">
-                    <i data-bs-toggle="tooltip"
+                    <i class="" data-bs-toggle="tooltip"
                         data-bs-title="For I myself once saw with my own eyes the Sibyl hanging in a cage, and when the boys asked her, 'Sybil, what do you want?' she answered 'I want to die.'">
                         &lsquo;Nam Sibyllam quidem Cumis ego ipse oculis meis
                         vidi in ampulla pendere, et cum illi pueri
@@ -66,7 +68,7 @@
 
                 <a style="font-family: ETBembo" tabindex="0" data-bs-trigger="focus" data-bs-toggle="popover"
                     data-bs-title="Dedication"
-                    data-bs-content="The dedication comes from Dante's Purgatorio 26 with respect to Arnaut Daniel">
+                    data-bs-content="From Purgatorio 26, Dante's tribute to Arnaut Daniel.">
                     <p>
                         For Ezra Pound<br>
                         <i data-bs-toggle="tooltip" data-bs-title="The better craftsman">il miglior fabbro</i>.
@@ -75,6 +77,18 @@
             </p>
             <hr>
         </div>
+        <div class="modal fade" id="aboutModal" tabindex="-1" style="font-family:sans-serif;">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-body">
+                  <p>This project aims to foster appreciation for a landmark poem which, though difficult and intimidating, invites the reader on a spiritual and literary journey with its trail of myriad allusions.</p>
+                  <p>By default, the page only displays the text of the poem. You can enable line numbers, consult Eliot's notes, and read the comments in as linear or non-linear a fashion you like.</p>
+                  <p>Scroll over text in foreign languages to see their translation, and follow the many links to explore the poem's sources.</p>
+                  <p>Enjoy!</p>
+                </div>
+              </div>
+            </div>
+          </div>
         <div class="container-fluid">
             <div class="row justify-content-start align-items-start gx-5">
                 <div class="col-1">
@@ -89,7 +103,8 @@
                             <button type="button" class="btn btn-outline-dark" id="line-numbers">Line No.</button>
                             <button type="button" class="btn btn-outline-dark" data-bs-toggle="offcanvas"
                                 data-bs-target="#offcanvasScrolling">Notes</button>
-                            <!-- <button type="button" class="btn btn-outline-dark" data-bs-toggle="collapse" data-bs-target="#commentary">Comments</button> -->
+                            <button type="button" class="btn btn-outline-dark" id="footnotes" data-bs-toggle="collapse" data-bs-target="#commentary">Comments</button>
+                            <button type="button" class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#aboutModal">About</button>
                         </div>
                     </div>
                 </div>
@@ -98,12 +113,10 @@
                         class="scrollspy-example" tabindex="0">
                         <div class="poem">
                             <div id="burial-of-the-dead">
-                                <p style="font-variant: small-caps;">
-                                    I. The Burial of the Dead</p>
+                                <a tabindex="0" data-bs-toggle="popover" data-bs-trigger="focus" title="The Order for the Burial of the Dead" data-bs-content="From the Book of Common Prayer, the burial rites of the Church of England" style="font-variant: small-caps;">I. The <span class="highlight">Burial</span> of the Dead</a>
                                 <br>
-
                                 <div class="line">
-                                    April is the cruellest month, breeding</div>
+                                    <span class="highlight">April is the cruellest month,</span> breeding</div>
                                 <div class="line">
                                     Lilacs out of the dead land, mixing</div>
                                 <div class="line">
@@ -143,7 +156,7 @@
                                 <div class="line">
                                     What are the roots that clutch, what branches grow</div>
                                 <div class="line" id="line-20">
-                                    Out of this stony rubbish? Son of man,</div>
+                                    Out of this stony rubbish? <span class="highlight">Son of man,</span></div>
                                 <div class="line">
                                     You cannot say, or guess, for you know only</div>
                                 <div class="line">
@@ -368,7 +381,7 @@
 
                                 <div class="line">
                                     &nbsp; &lsquo;What is that noise?&rsquo;</div>
-                                <div class="line">
+                                <div class="line" id="line-118">
                                     &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
                                     &nbsp;&nbsp;
                                     &nbsp;The wind under the door.</div>
@@ -1177,7 +1190,9 @@
                 <div class="col-4">
                     <div class="collapse" id="commentary">
                         <div class="card card-body">
-                            
+                            <p>
+                                We open on April, usually tied to Easter and rebirth (see Chaucer's <a href="https://www.poetryfoundation.org/poems/43926/the-canterbury-tales-general-prologue">prologue</a> to the <i>The Canterbury Tales</i>), but here a time of burial, something Frazer discusses in <i>The Golden Bough</i> in connection with human sacrifices intended to revive dying gods as part of fertility rites.
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -1272,10 +1287,10 @@
                     <a href="#line-115">115.</a> Cf. <a href="#line-195">Part III, l. 195</a>.
                 </li>
                 <li>
-                    118. Cf. Webster: “Is the wind in that door still?”
+                    <a href="#line-118">118.</a> Cf. Webster: “Is the wind in that door still?”
                 </li>
                 <li>
-                    126. Cf. Part I, 37, 48.
+                    126. Cf. Part I, l. 37, 48.
                 </li>
                 <li>
                     138. Cf. The game of chess in Middleton's <i>Women Beware Women</i>.
@@ -1439,6 +1454,10 @@
         $('#line-numbers').click(function () {
             $('.line').toggleClass('numbered-line');
 
+        });
+
+        $('#footnotes').click(function() {
+            $('.highlight').toggleClass('mark');
         });
     </script>
 </body>
