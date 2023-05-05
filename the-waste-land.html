@@ -19,7 +19,8 @@
 
         .poem {
             counter-reset: line;
-            font-family: ETBembo;
+            font-family: "ETBembo";
+            font-size: larger;
         }
 
         .tooltip {
@@ -40,43 +41,42 @@
 
 <body>
     <main>
+
         <div class="px-4 py-5 my-5 text-center">
-            <a tabindex="0" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-title="The Title"
+            <h1 class="display-5 title">
+                <a tabindex="0" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-title="The Title"
                 data-bs-content="The original title was He Do the Police in Different Voices, which comes from Charles Dickens' Our Mutual Friend, hinting at the the polyvocal quality of the poem.">
-                <h1 class="display-6 title">
-                    The Waste Land
-                </h1>
-            </a>
-            <span style="font-variant: small-caps;">
-                By T. S. Eliot
+                The Waste Land
+                </a>
                 <br>
-                Published 1922
-            </span>
-            <hr>
-            <p style="font-family: ETBembo;">
+                <small class="text-body-secondary">T.S. Eliot</small>
+                <br>
+                <p class="display-6">1922</p>
+            </h1>
+            <div class="col-lg-6 mx-auto">
                 <a tabindex="0" style="text-align:justify" data-bs-trigger="focus" data-bs-toggle="popover"
                     data-bs-title="Epigraph"
                     data-bs-content="This is one of the tall stories of Trimalchio in the Satyricon of Petronius Arbiter, a first-century novel of which substantial fragments survive. The Sibyl was granted immortality but not youth. This epigraph replaced one from Conrad's Heart of Darkness, which Eliot dropped on Pound's advice.">
-                    <i class="" data-bs-toggle="tooltip"
-                        data-bs-title="For I myself once saw with my own eyes the Sibyl hanging in a cage, and when the boys asked her, 'Sybil, what do you want?' she answered 'I want to die.'">
-                        &lsquo;Nam Sibyllam quidem Cumis ego ipse oculis meis
-                        vidi in ampulla pendere, et cum illi pueri
-                        dicerent:&nbsp;&Sigma;ί&beta;&upsilon;&lambda;&lambda;&alpha;
-                        &tau;ί&nbsp;&theta;έ&lambda;&epsilon;&iota;&sigmaf;; respondebat
-                        illa:&nbsp;ά&pi;&omicron;&theta;&alpha;&nu;&epsilon;&icirc;&nu;&nbsp;&theta;έ&lambda;&omega;.&rsquo;
-                    </i>
-                </a>
-
-                <a style="font-family: ETBembo" tabindex="0" data-bs-trigger="focus" data-bs-toggle="popover"
+              <i data-bs-toggle="tooltip"
+              data-bs-title="For I myself once saw with my own eyes the Sibyl hanging in a cage, and when the boys asked her, 'Sybil, what do you want?' she answered 'I want to die.'" class="lead poem mb-4">&lsquo;Nam Sibyllam quidem Cumis ego ipse oculis meis
+                vidi in ampulla pendere, et cum illi pueri
+                dicerent:&nbsp;&Sigma;ί&beta;&upsilon;&lambda;&lambda;&alpha;
+                &tau;ί&nbsp;&theta;έ&lambda;&epsilon;&iota;&sigmaf;; respondebat
+                illa:&nbsp;ά&pi;&omicron;&theta;&alpha;&nu;&epsilon;&icirc;&nu;&nbsp;&theta;έ&lambda;&omega;.&rsquo;
+              </i>
+            </a>
+            </div>
+            <br><br>
+            <a style="font-family: ETBembo" tabindex="0" data-bs-trigger="focus" data-bs-toggle="popover"
                     data-bs-title="Dedication" data-bs-content="From Purgatorio 26, Dante's tribute to Arnaut Daniel.">
-                    <p>
-                        For Ezra Pound<br>
-                        <i data-bs-toggle="tooltip" data-bs-title="The better craftsman">il miglior fabbro</i>.
-                    </p>
-                </a>
+            <p class="lead poem mb-4">
+                For Ezra Pound<br>
+                <i data-bs-toggle="tooltip" data-bs-title="The better craftsman">il miglior fabbro</i>.
             </p>
-            <hr>
-        </div>
+        </a>
+          </div>
+
+        
         <div class="modal fade" id="aboutModal" tabindex="-1" style="font-family:sans-serif;">
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
@@ -95,7 +95,7 @@
         </div>
         <div class="container-fluid">
             <div class="row justify-content-start align-items-start gx-5">
-                <div class="col-1">
+                <div class="col-2">
                     <div id="table-of-contents" class="list-group sticky-top">
                         <a class="list-group-item list-group-item-action" href="#burial-of-the-dead">I</a>
                         <a class="list-group-item list-group-item-action" href="#game-of-chess">II</a>
