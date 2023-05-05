@@ -9,7 +9,7 @@
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <style>
         body {
-            font-family: serif;
+            font-family: "ETBembo";
         }
 
         .title {
@@ -19,7 +19,6 @@
 
         .poem {
             counter-reset: line;
-            font-family: "ETBembo";
             font-size: larger;
         }
 
@@ -36,17 +35,21 @@
         .numbered-line:before {
             content: counter(line);
         }
+
+        .modal-body {
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
     </style>
 </head>
 
 <body>
     <main>
 
-        <div class="px-4 py-5 my-5 text-center">
+        <div class="py-5 text-center">
             <h1 class="display-5 title">
                 <a tabindex="0" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-title="The Title"
-                data-bs-content="The original title was He Do the Police in Different Voices, which comes from Charles Dickens' Our Mutual Friend, hinting at the the polyvocal quality of the poem.">
-                The Waste Land
+                    data-bs-content="The original title was He Do the Police in Different Voices, which comes from Charles Dickens' Our Mutual Friend, hinting at the the polyvocal quality of the poem.">
+                    The Waste Land
                 </a>
                 <br>
                 <small class="text-body-secondary">T.S. Eliot</small>
@@ -54,29 +57,30 @@
                 <p class="display-6">1922</p>
             </h1>
             <div class="col-lg-6 mx-auto">
-                <a tabindex="0" style="text-align:justify" data-bs-trigger="focus" data-bs-toggle="popover"
-                    data-bs-title="Epigraph"
-                    data-bs-content="This is one of the tall stories of Trimalchio in the Satyricon of Petronius Arbiter, a first-century novel of which substantial fragments survive. The Sibyl was granted immortality but not youth. This epigraph replaced one from Conrad's Heart of Darkness, which Eliot dropped on Pound's advice.">
-              <i data-bs-toggle="tooltip"
-              data-bs-title="For I myself once saw with my own eyes the Sibyl hanging in a cage, and when the boys asked her, 'Sybil, what do you want?' she answered 'I want to die.'" class="lead poem mb-4">&lsquo;Nam Sibyllam quidem Cumis ego ipse oculis meis
-                vidi in ampulla pendere, et cum illi pueri
-                dicerent:&nbsp;&Sigma;ί&beta;&upsilon;&lambda;&lambda;&alpha;
-                &tau;ί&nbsp;&theta;έ&lambda;&epsilon;&iota;&sigmaf;; respondebat
-                illa:&nbsp;ά&pi;&omicron;&theta;&alpha;&nu;&epsilon;&icirc;&nu;&nbsp;&theta;έ&lambda;&omega;.&rsquo;
-              </i>
-            </a>
-            </div>
-            <br><br>
-            <a style="font-family: ETBembo" tabindex="0" data-bs-trigger="focus" data-bs-toggle="popover"
+                <figure>
+                    <a tabindex="0" style="text-align:justify" data-bs-trigger="focus" data-bs-toggle="popover"
+                        data-bs-title="Epigraph"
+                        data-bs-content="This is one of the tall stories of Trimalchio in the Satyricon of Petronius Arbiter, a first-century novel of which substantial fragments survive. The Sibyl was granted immortality but not youth. This epigraph replaced one from Conrad's Heart of Darkness, which Eliot dropped on Pound's advice.">
+                        <blockquote class="blockquote">
+                            <i data-bs-toggle="tooltip"
+                                data-bs-title="For I myself once saw with my own eyes the Sibyl hanging in a cage, and when the boys asked her, 'Sybil, what do you want?' she answered 'I want to die.'">Nam
+                                Sibyllam quidem Cumis ego ipse oculis meis
+                                vidi in ampulla pendere, et cum illi pueri
+                                dicerent:&nbsp;&Sigma;ί&beta;&upsilon;&lambda;&lambda;&alpha;
+                                &tau;ί&nbsp;&theta;έ&lambda;&epsilon;&iota;&sigmaf;; respondebat
+                                illa:&nbsp;ά&pi;&omicron;&theta;&alpha;&nu;&epsilon;&icirc;&nu;&nbsp;&theta;έ&lambda;&omega;.</i>
+                        </blockquote>
+                    </a>
+                </figure>
+                <a style="font-family: ETBembo" tabindex="0" data-bs-trigger="focus" data-bs-toggle="popover"
                     data-bs-title="Dedication" data-bs-content="From Purgatorio 26, Dante's tribute to Arnaut Daniel.">
-            <p class="lead poem mb-4">
-                For Ezra Pound<br>
-                <i data-bs-toggle="tooltip" data-bs-title="The better craftsman">il miglior fabbro</i>.
-            </p>
-        </a>
-          </div>
-
-        
+                    <p class="lead poem mb-4">
+                        For Ezra Pound<br>
+                        <i data-bs-toggle="tooltip" data-bs-title="The better craftsman">il miglior fabbro</i>.
+                    </p>
+                </a>
+            </div>
+        </div>
         <div class="modal fade" id="aboutModal" tabindex="-1" style="font-family:sans-serif;">
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
@@ -96,7 +100,7 @@
         <div class="container-fluid">
             <div class="row justify-content-start align-items-start gx-5">
                 <div class="col-2">
-                    <div id="table-of-contents" class="list-group sticky-top">
+                    <div id="table-of-contents" class="list-group sticky-top text-center">
                         <a class="list-group-item list-group-item-action" href="#burial-of-the-dead">I</a>
                         <a class="list-group-item list-group-item-action" href="#game-of-chess">II</a>
                         <a class="list-group-item list-group-item-action" href="#fire-sermon">III</a>
@@ -107,13 +111,14 @@
                             <button type="button" class="btn btn-outline-dark" id="line-numbers">Line No.</button>
                             <button type="button" class="btn btn-outline-dark" data-bs-toggle="offcanvas"
                                 data-bs-target="#offcanvasScrolling">Notes</button>
-                            <button type="button" class="btn btn-outline-dark" id="footnotes" data-bs-toggle="collapse"
-                                data-bs-target="#commentary">Comments</button>
-                            <button type="button" class="btn btn-outline-dark" data-bs-toggle="modal"
-                                data-bs-target="#aboutModal">About</button>
+                            <!-- <button type="button" class="btn btn-outline-dark" id="footnotes" data-bs-toggle="collapse"
+                                data-bs-target="#commentary">Comments</button> -->
+                            <!-- <button type="button" class="btn btn-outline-dark" data-bs-toggle="modal"
+                                data-bs-target="#aboutModal">About</button> -->
                         </div>
                     </div>
                 </div>
+                <div class="col-1"></div>
                 <div class="col-4">
                     <div data-bs-spy="scroll" data-bs-target="#table-of-contents" data-bs-smooth-scroll="true"
                         class="scrollspy-example" tabindex="0">
@@ -171,7 +176,7 @@
                                 <div class="line">
                                     You cannot say, or guess, for you know only</div>
                                 <div class="line">
-                                    A <span class="highlight">heap of broken images,</span>  where the sun beats,</div>
+                                    A <span class="highlight">heap of broken images,</span> where the sun beats,</div>
                                 <div class="line" id="line-23">
                                     And the dead tree gives no shelter, the cricket no relief,</div>
                                 <div class="line">
@@ -1199,29 +1204,34 @@
                 </div>
                 <div class="col-4">
                     <div class="collapse" id="commentary">
-                    <div class="row row-cols-auto g-4">
-                        <div class="col">
-                            <div class="card">
-                                <div class="card-body">
-                                    <h5 class="card-title">Stanza I</h5>
-                                    <p class="card-text">
-                                        We open on April, usually tied to Easter and rebirth (see Chaucer's <a href="https://www.poetryfoundation.org/poems/43926/the-canterbury-tales-general-prologue" target="_blank">prologue</a> to the <i>The Canterbury Tales</i>), but here a time of burial, something Frazer discusses in <i>The Golden Bough</i> in connection with human sacrifices intended to revive dying gods as part of fertility rites.
-                                        We are introduced to the first voice, Marie, an acquaintance of Eliot. 
-                                    </p>
+                        <div class="row row-cols-auto g-4">
+                            <div class="col">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Stanza I</h5>
+                                        <p class="card-text">
+                                            We open on April, usually tied to Easter and rebirth (see Chaucer's <a
+                                                href="https://www.poetryfoundation.org/poems/43926/the-canterbury-tales-general-prologue"
+                                                target="_blank">prologue</a> to the <i>The Canterbury Tales</i>), but
+                                            here a time of burial, something Frazer discusses in <i>The Golden Bough</i>
+                                            in connection with human sacrifices intended to revive dying gods as part of
+                                            fertility rites.
+                                            We are introduced to the first voice, Marie, an acquaintance of Eliot.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Stanza II</h5>
+                                        <p class="card-text">
+                                            A vision of a dry desolation.
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col">
-                            <div class="card">
-                                <div class="card-body">
-                                    <h5 class="card-title">Stanza II</h5>
-                                    <p class="card-text">
-                                        A vision of a dry desolation.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                     </div>
                 </div>
             </div>
@@ -1273,7 +1283,8 @@
         <div class="offcanvas-body" style="font-family: ETBembo;">
             <p>Not only the title, but the plan and a good deal of the incidental symbolism of the poem were suggested
                 by Miss Jessie L. Weston's book on the Grail legend: <a
-                    href="https://en.wikisource.org/wiki/From_Ritual_to_Romance" target="_blank"><i>From Ritual to Romance</i></a>
+                    href="https://en.wikisource.org/wiki/From_Ritual_to_Romance" target="_blank"><i>From Ritual to
+                        Romance</i></a>
                 (Cambridge). Indeed,
                 so deeply am I indebted, Miss Weston's book will elucidate the difficulties of the poem much better than
                 my notes can do; and I recommend it (apart from the great interest of the book itself) to any who think
@@ -1286,9 +1297,11 @@
                 I. The Burial of the Dead</p>
             <ul class="list-unstyled">
                 <li><a href="#line-20">Line 20.</a> Cf. <a
-                        href="https://www.biblegateway.com/passage/?search=Ezekiel+2%3A1" target="_blank">Ezekiel II, i</a>.</li>
+                        href="https://www.biblegateway.com/passage/?search=Ezekiel+2%3A1" target="_blank">Ezekiel II,
+                        i</a>.</li>
                 <li><a href="#line-23">23.</a> Cf. <a
-                        href="https://www.biblegateway.com/passage/?search=Ecclesiastes+12%3A5" target="_blank">Ecclesiastes XII, v</a>.
+                        href="https://www.biblegateway.com/passage/?search=Ecclesiastes+12%3A5"
+                        target="_blank">Ecclesiastes XII, v</a>.
                 </li>
                 <li><a href="#line-31">31.</a> V. Tristan und Isolde, I, verses 5-8.</li>
                 <li><a href="#line-42">42.</a> Id. III, verse 24.</li>
@@ -1309,7 +1322,8 @@
                     </p>
                 </li>
                 <li><a href="#line-63">63.</a> Cf. <a
-                        href="https://digitaldante.columbia.edu/dante/divine-comedy/inferno/inferno-3/" target="_blank">Inferno III</a>,
+                        href="https://digitaldante.columbia.edu/dante/divine-comedy/inferno/inferno-3/"
+                        target="_blank">Inferno III</a>,
                     55-57:
                     <p>
                         “si lunga tratta <br>
@@ -1319,7 +1333,8 @@
                 </li>
                 <li>
                     <a href="#line-64">64.</a> Cf. <a
-                        href="https://digitaldante.columbia.edu/dante/divine-comedy/inferno/inferno-4/" target="_blank">Inferno IV</a>,
+                        href="https://digitaldante.columbia.edu/dante/divine-comedy/inferno/inferno-4/"
+                        target="_blank">Inferno IV</a>,
                     25-27:
                     <p>
                         “Quivi, secondo che per ascoltare, <br>
@@ -1345,19 +1360,22 @@
                 </li>
                 <li>
                     <a href="#line-92">92.</a> Laquearia. V. <a
-                        href="http://data.perseus.org/citations/urn:cts:latinLit:phi0690.phi003.perseus-lat1:1.723" target="_blank"><i>Aeneid</i>,
+                        href="http://data.perseus.org/citations/urn:cts:latinLit:phi0690.phi003.perseus-lat1:1.723"
+                        target="_blank"><i>Aeneid</i>,
                         I, 726</a>: <br>
                     dependent lychni laquearibus aureis <br>
                     incensi, et noctem flammis funalia vincunt
                 </li>
                 <li>
                     <a href="#line-98">98.</a> Sylvan scene. V. Milton, <a
-                        href="https://milton.host.dartmouth.edu/reading_room/pl/book_4/text.shtml" target="_blank"><i>Paradise Lost</i>,
+                        href="https://milton.host.dartmouth.edu/reading_room/pl/book_4/text.shtml"
+                        target="_blank"><i>Paradise Lost</i>,
                         IV</a>, 140.
                 </li>
                 <li>
                     <a href="#line-99">99.</a> V. Ovid, <a
-                        href="http://data.perseus.org/citations/urn:cts:latinLit:phi0959.phi006.perseus-eng1:6.412-6.503" target="_blank"><i>Metamorphoses</i>,
+                        href="http://data.perseus.org/citations/urn:cts:latinLit:phi0959.phi006.perseus-eng1:6.412-6.503"
+                        target="_blank"><i>Metamorphoses</i>,
                         VI, Philomela</a>.
                 </li>
                 <li>
@@ -1386,7 +1404,7 @@
                     <a href="#line-192">192.</a> Cf. <i>The Tempest</i>, I, ii.
                 </li>
                 <li>
-                    <a href="#line-196">196.</a> Cf. Marvell, <i>To His Coy Mistress</i>.
+                    <a href="#line-196">196.</a> Cf. Marvell, <a href="https://www.poetryfoundation.org/poems/44688/to-his-coy-mistress" target="_blank"><i>To His Coy Mistress</i></a>.
                 </li>
                 <li>
                     <a href="#line-197">197.</a> Cf. Day, <i>Parliament of Bees</i>: <br>
@@ -1396,7 +1414,8 @@
                     “Where all shall see her naked skin...”
                 </li>
                 <li>
-                    <a href="#line-199">199.</a> I do not know the origin of the ballad from which these lines are taken: it was reported to me
+                    <a href="#line-199">199.</a> I do not know the origin of the ballad from which these lines are
+                    taken: it was reported to me
                     from Sydney, Australia.
                 </li>
                 <li>
@@ -1434,7 +1453,8 @@
                     Scire futura dedit poenamque levavit honore.
                 </li>
                 <li>
-                    <a href="#line-221">221.</a> This may not appear as exact as Sappho's lines, but I had in mind “longshore” or “dory”
+                    <a href="#line-221">221.</a> This may not appear as exact as Sappho's lines, but I had in mind
+                    “longshore” or “dory”
                     fisherman, who returns at nightfall.
                 </li>
                 <li>
@@ -1444,15 +1464,18 @@
                     <a href="#line-257">257.</a> V. <i>The Tempest</i>, as above.
                 </li>
                 <li>
-                    <a href="#line-264">264.</a> The interior of St. Magnus Martyr is to my mind one of the finest among Wren's interiors. See
+                    <a href="#line-264">264.</a> The interior of St. Magnus Martyr is to my mind one of the finest among
+                    Wren's interiors. See
                     <i>The Proposed Demolition of Nineteen City Churches</i>: (P. S. King & Sons, Ltd.)
                 </li>
                 <li>
-                    <a href="#line-266">266.</a> The Song of the (three) Thames-daughters begins here. From line 292 to 306 inclusive they speak
+                    <a href="#line-266">266.</a> The Song of the (three) Thames-daughters begins here. From line 292 to
+                    306 inclusive they speak
                     in turn. V. <i>Götterdämmerung</i>, III, i: the Rhine-daughters.
                 </li>
                 <li>
-                    <a href="#line-279">279.</a> V. Froude, <i>Elizabeth</i>, Vol. I, ch. iv, letter of De Quadra to Philip of Spain: <br>
+                    <a href="#line-279">279.</a> V. Froude, <i>Elizabeth</i>, Vol. I, ch. iv, letter of De Quadra to
+                    Philip of Spain: <br>
                     “In the afternoon we were in a barge, watching the games on the river. (The queen) was alone with
                     Lord Robert and myself on the poop, when they began to talk nonsense, and went so far that Lord
                     Robert at last said, as I was on the spot there was no reason why they should not be married if the
@@ -1470,13 +1493,15 @@
                     a cauldron of unholy loves sang all about mine ears.”
                 </li>
                 <li>
-                    <a href="#line-308">308.</a> The complete text of the Buddha's Fire Sermon (which corresponds in importance to the Sermon on
+                    <a href="#line-308">308.</a> The complete text of the Buddha's Fire Sermon (which corresponds in
+                    importance to the Sermon on
                     the Mount) from which these words are taken, will be found translated in the late Henry Clarke
                     Warren's <i>Buddhism in Translation</i> (Harvard Oriental Series). Mr. Warren was one of the great
                     pioneers of Buddhist studies in the Occident.
                 </li>
                 <li>
-                    <a href="#line-309">309.</a> From St. Augustine's <i>Confessions</i> again. The collocation of these two representatives of
+                    <a href="#line-309">309.</a> From St. Augustine's <i>Confessions</i> again. The collocation of these
+                    two representatives of
                     eastern and western ascetism, as the culmination of this part of the poem, is not an accident.
                 </li>
             </ul>
@@ -1485,12 +1510,14 @@
             In the first part of Part V three themes are employed: the journey to Emmaus, the approach to the Chapel
             Perilous (see Miss Weston's book) and the present decay of eastern Europe.
             <ul class="list-unstyled">
-                <li><a href="#line-357">357.</a> This is <i>Turdus aonalaschkae pallasii</i>, the hermit-thrush which I have heard in Quebec
+                <li><a href="#line-357">357.</a> This is <i>Turdus aonalaschkae pallasii</i>, the hermit-thrush which I
+                    have heard in Quebec
                     County. Chapman says (<i>Handbook of Birds of Eastern North America</i>) “it is most at home in
                     secluded woodland and thickety retreats... Its notes are not remarkable for variety or volume, but
                     in purity and sweetness of tone and exquisite modulation they are unequalled.” Its “water-dripping
                     song” is justly celebrated.</li>
-                <li><a href="#line-360">360.</a> The following lines were stimulated by the account of one of the Antarctic expeditions (I
+                <li><a href="#line-360">360.</a> The following lines were stimulated by the account of one of the
+                    Antarctic expeditions (I
                     forget which, but I think one of Shackleton's): it was related that the party of explorers, at the
                     extremity of their strength, had the constant delusion that there was one more member than could
                     actually be counted.</li>
@@ -1526,7 +1553,8 @@
                 </li>
                 <li>
                     424. V. Weston: <i>From Ritual to Romance</i>; <a
-                        href="https://en.wikisource.org/wiki/From_Ritual_to_Romance/Chapter_IX" target="_blank">chapter on the Fisher
+                        href="https://en.wikisource.org/wiki/From_Ritual_to_Romance/Chapter_IX" target="_blank">chapter
+                        on the Fisher
                         King</a>.
                 </li>
                 <li>
