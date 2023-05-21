@@ -13,7 +13,6 @@
         }
 
         .title {
-            font-family: canada-type-gibson, Gill Sans, Gill Sans MT, Calibri, sans-serif;
             font-variant: small-caps;
         }
 
@@ -34,6 +33,7 @@
 
         .numbered-line:before {
             content: counter(line);
+            font-style: normal;
         }
 
         .modal-body {
@@ -53,8 +53,7 @@
                 </a>
                 <br>
                 <small class="text-body-secondary">T.S. Eliot</small>
-                <br>
-                <p class="display-6">1922</p>
+                <p class="fs-3">1922</p>
             </h1>
             <div class="col-lg-6 mx-auto">
                 <figure>
@@ -108,9 +107,12 @@
                         <a class="list-group-item list-group-item-action" href="#what-the-thunder-said">V</a>
                         <br>
                         <div class="btn-group-vertical" role="group">
-                            <button type="button" class="btn btn-outline-dark" id="line-numbers">Line No.</button>
-                            <button type="button" class="btn btn-outline-dark" data-bs-toggle="offcanvas"
-                                data-bs-target="#offcanvasScrolling">Notes</button>
+                            <input type="checkbox" class="btn-check" id="line-numbers" autocomplete="off">
+                            <label class="btn btn-outline-secondary" for="line-numbers">Line Numbers</label>
+
+                            <input type="checkbox" class="btn-check" id="eliot-notes" autocomplete="off">
+                            <label class="btn btn-outline-secondary" for="eliot-notes" data-bs-toggle="offcanvas"
+                            data-bs-target="#offcanvasScrolling"> Eliot's Notes</label>
                             <!-- <button type="button" class="btn btn-outline-dark" id="footnotes" data-bs-toggle="collapse"
                                 data-bs-target="#commentary">Comments</button> -->
                             <!-- <button type="button" class="btn btn-outline-dark" data-bs-toggle="modal"
@@ -612,7 +614,8 @@
                                     And on her daughter</div>
                                 <div class="line">
                                     They wash their feet in soda water</div>
-                                <div class="line" id="line-202">
+                                <div class="line" id="line-202" data-bs-toggle="tooltip"
+                                    title="And O those children's voices, singing in the cupola!">
                                     <em>Et O ces voix d&rsquo;enfants, chantant dans la coupole!</em>
                                 </div>
                                 <br>
@@ -1019,18 +1022,18 @@
                                         &nbsp; &nbsp;And dry grass singing</div>
                                     <div class="line">
                                         &nbsp; &nbsp;But sound of water over a rock</div>
-                                    <div class="line" id="line-357">
-                                        &nbsp; &nbsp;Where the hermit-thrush sings in the pine trees</div>
                                     <div class="line">
+                                        &nbsp; &nbsp;Where the hermit-thrush sings in the pine trees</div>
+                                    <div class="line" id="line-358">
                                         &nbsp; &nbsp;Drip drop drip drop drop drop drop</div>
                                     <div class="line">
                                         &nbsp; &nbsp;But there is no water</div>
 
                                     <br>
 
-                                    <div class="line" id="line-360">
-                                        Who is the third who walks always beside you?</div>
                                     <div class="line">
+                                        Who is the third who walks always beside you?</div>
+                                    <div class="line" id="line-361">
                                         When I count, there are only you and I together</div>
                                     <div class="line">
                                         But when I look ahead up the white road</div>
@@ -1040,12 +1043,12 @@
                                         Gliding wrapt in a brown mantle, hooded</div>
                                     <div class="line">
                                         I do not know whether a man or a woman</div>
-                                    <div class="line" id="line-366">
+                                    <div class="line">
                                         &mdash;But who is that on the other side of you?</div>
 
                                     <br>
 
-                                    <div class="line">
+                                    <div class="line" id="line-367">
                                         What is that sound high in the air</div>
                                     <div class="line">
                                         Murmur of maternal lamentation</div>
@@ -1063,9 +1066,9 @@
                                         Falling towers</div>
                                     <div class="line">
                                         Jerusalem Athens Alexandria</div>
-                                    <div class="line" id="line-376">
-                                        Vienna London</div>
                                     <div class="line">
+                                        Vienna London</div>
+                                    <div class="line" id="line-377">
                                         Unreal</div>
 
                                     <br>
@@ -1118,9 +1121,9 @@
                                         The jungle crouched, humped in silence.</div>
                                     <div class="line">
                                         Then spoke the thunder</div>
-                                    <div class="line" id="line-401">
-                                        DA</div>
                                     <div class="line">
+                                        DA</div>
+                                    <div class="line" id="line-402">
                                         <em>Datta</em>: what have we given?<br>
                                     </div>
                                     <div class="line">
@@ -1133,7 +1136,7 @@
                                         By this, and this only, we have existed</div>
                                     <div class="line">
                                         Which is not to be found in our obituaries</div>
-                                    <div class="line">
+                                    <div class="line" id="line-408">
                                         Or in memories draped by the beneficent spider</div>
                                     <div class="line">
                                         Or under seals broken by the lean solicitor</div>
@@ -1141,7 +1144,7 @@
                                         In our empty rooms</div>
                                     <div class="line">
                                         DA</div>
-                                    <div class="line">
+                                    <div class="line" id="line-412">
                                         <em>Dayadhvam</em>: I have heard the key<br>
                                     </div>
                                     <div class="line">
@@ -1173,26 +1176,26 @@
                                         &nbsp;
                                         &nbsp;
                                         &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;I sat upon the shore</div>
-                                    <div class="line">
+                                    <div class="line" id="line-425">
                                         Fishing, with the arid plain behind me</div>
                                     <div class="line">
                                         Shall I at least set my lands in order?</div>
                                     <div class="line">
                                         London Bridge is falling down falling down falling down</div>
-                                    <div class="line">
+                                    <div class="line" id="line-428">
                                         <em>Poi s&rsquo;ascose nel foco che gli affina<br>
                                     </div>
-                                    <div class="line">
+                                    <div class="line" id="line-429">
                                         Quando fiam uti chelidon&mdash;O swallow swallow</div>
-                                    <div class="line">
+                                    <div class="line" id="line-430">
                                         Le Prince d&rsquo;Aquitaine &agrave; la tour abolie</em></div>
                                     <div class="line">
                                         These fragments I have shored against my ruins</div>
-                                    <div class="line">
+                                    <div class="line" id="line-432">
                                         Why then Ile fit you. Hieronymo&rsquo;s mad againe.</div>
                                     <div class="line">
                                         Datta. Dayadhvam. Damyata.</div>
-                                    <div class="line">
+                                    <div class="line" id="line-434">
                                         &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;Shantih
                                         &nbsp;&nbsp;
                                         &nbsp;shantih &nbsp;&nbsp; &nbsp;shantih</div>
@@ -1275,9 +1278,12 @@
     <div class="offcanvas offcanvas-end" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1"
         id="offcanvasScrolling" aria-labelledby="notesLabel">
         <div class="offcanvas-header">
-            <h5 class="offcanvas-title" id="offcanvasExampleLabel"><a tabindex="0" role="button" data-bs-toggle="modal"
-                    data-bs-target="#exampleModal" class="offcanvas-title title" id="notesLabel">Notes on the Waste
-                    Land</a></h5>
+            <h5 class="offcanvas-title" id="offcanvasExampleLabel">
+                <!-- <a tabindex="0" role="button" data-bs-toggle="modal"
+                    data-bs-target="#exampleModal" class="offcanvas-title title" id="notesLabel"> -->
+                    Notes on the Waste Land
+                <!-- </a> -->
+            </h5>
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <div class="offcanvas-body" style="font-family: ETBembo;">
@@ -1411,7 +1417,7 @@
                     “When of the sudden, listening, you shall hear, <br>
                     “A noise of horns and hunting, which shall bring <br>
                     “Actaeon to Diana in the spring, <br>
-                    “Where all shall see her naked skin...”
+                    “Where all shall see her naked skin&hellip;”
                 </li>
                 <li>
                     <a href="#line-199">199.</a> I do not know the origin of the ballad from which these lines are
@@ -1432,7 +1438,7 @@
                     Ferdinand Prince of Naples, so all the women are one woman, and the two sexes meet in Tiresias. What
                     Tiresias sees, in fact, is the substance of the poem. The whole passage from Ovid is of great
                     anthropological interest: <br>
-                    ‘...Cum Iunone iocos et maior vestra profecto est <br>
+                    ‘&hellip;Cum Iunone iocos et maior vestra profecto est <br>
                     Quam, quae contingit maribus,’ dixisse, ‘voluptas.’ <br>
                     Illa negat; placuit quae sit sententia docti <br>
                     Quaerere Tiresiae: venus huic erat ultraque nota.<br>
@@ -1510,37 +1516,37 @@
             In the first part of Part V three themes are employed: the journey to Emmaus, the approach to the Chapel
             Perilous (see Miss Weston's book) and the present decay of eastern Europe.
             <ul class="list-unstyled">
-                <li><a href="#line-357">357.</a> This is <i>Turdus aonalaschkae pallasii</i>, the hermit-thrush which I
+                <li><a href="#line-358">357.</a> This is <i>Turdus aonalaschkae pallasii</i>, the hermit-thrush which I
                     have heard in Quebec
                     County. Chapman says (<i>Handbook of Birds of Eastern North America</i>) “it is most at home in
-                    secluded woodland and thickety retreats... Its notes are not remarkable for variety or volume, but
+                    secluded woodland and thickety retreats&hellip; Its notes are not remarkable for variety or volume, but
                     in purity and sweetness of tone and exquisite modulation they are unequalled.” Its “water-dripping
                     song” is justly celebrated.</li>
-                <li><a href="#line-360">360.</a> The following lines were stimulated by the account of one of the
+                <li><a href="#line-361">360.</a> The following lines were stimulated by the account of one of the
                     Antarctic expeditions (I
                     forget which, but I think one of Shackleton's): it was related that the party of explorers, at the
                     extremity of their strength, had the constant delusion that there was one more member than could
                     actually be counted.</li>
                 <li>
-                    <a href="#line-366">366</a>-<a href="#line-376">376.</a> Cf. Hermann Hesse, <i>Blick ins chaos</i>:
+                    <a href="#line-367">366</a>-<a href="#line-377">376.</a> Cf. Hermann Hesse, <i>Blick ins chaos</i>:
                     “Schon ist halb Europa, schon ist zumindest der halbe Osten Europas auf dem Wege zum Chaos, fährt
                     betrunken im heiligem Wahn am Abgrund entlang und singt dazu, singt betrunken und hymnisch wie
                     Dmitri Karamasoff sang. Ueber diese Lieder lacht der Bürger beleidigt, der Heilige und Seher hört
                     sie mit Tränen.”
                 </li>
                 <li>
-                    401. “Datta, dayadhvam, damyata” (Give, sympathise, control). The fable of the meaning of the
+                    <a href="#line-402">401.</a> “Datta, dayadhvam, damyata” (Give, sympathise, control). The fable of the meaning of the
                     Thunder is found in the <i>Brihadaranyaka—Upanishad</i>, 5, 1. A translation is found in Deussen's
                     <i>Sechsig Upanishads des Veda</i>, p. 489.
                 </li>
                 <li>
-                    407. Cf. Webster, <i>The White Devil</i>, V, vi: <br>
-                    “...they'll remarry <br>
+                    <a href="#line-408">407.</a> Cf. Webster, <i>The White Devil</i>, V, vi: <br>
+                    “&hellip;they'll remarry <br>
                     Ere the worm pierce your winding-sheet, ere the spider <br>
                     Make a thin curtain for your epitaphs.”
                 </li>
                 <li>
-                    411. Cf. <a
+                    <a href="#line-412">411.</a> Cf. <a
                         href="https://digitaldante.columbia.edu/dante/divine-comedy/inferno/inferno-33/"><i>Inferno</i>,
                         XXXIII</a>, 46: <br>
                     “ed io sentii chiavar l’uscio di sotto <br>
@@ -1548,17 +1554,17 @@
                     Also F. H. Bradley, <i>Appearance and Reality</i>, p. 306. <br>
                     “My external sensations are no less private to myself than are my thoughts or my feelings. In either
                     case my experience falls within my own circle, a circle closed on the outside; and, with all its
-                    elements alike, every sphere is opaque to the others which surround it... In brief, regarded as an
+                    elements alike, every sphere is opaque to the others which surround it&hellip; In brief, regarded as an
                     existence which appears in a soul, the whole world for each is peculiar and private to that soul.”
                 </li>
                 <li>
-                    424. V. Weston: <i>From Ritual to Romance</i>; <a
+                    <a href="#line-425">424.</a> V. Weston: <i>From Ritual to Romance</i>; <a
                         href="https://en.wikisource.org/wiki/From_Ritual_to_Romance/Chapter_IX" target="_blank">chapter
                         on the Fisher
                         King</a>.
                 </li>
                 <li>
-                    427. V. <a
+                    <a href="#line-428">427.</a> V. <a
                         href="https://digitaldante.columbia.edu/dante/divine-comedy/purgatorio/purgatorio-26/"><i>Purgatorio</i>,
                         XXVI</a>, 148. <br>
                     “‘Ara vos prec, per aquella valor <br>
@@ -1567,28 +1573,28 @@
                     Poi s’ascose nel foco che gli affina.”
                 </li>
                 <li>
-                    428. V. <i>Pervigilium Veneris</i>. Cf. Philomela in Parts II and III.
+                    <a href="#line-429">428.</a> V. <i>Pervigilium Veneris</i>. Cf. Philomela in Parts II and III.
                 </li>
                 <li>
-                    429. V. Gerard de Nerval, Sonnet <i>El Desdichado</i>.
+                    <a href="#line-430">429.</a> V. Gerard de Nerval, Sonnet <i>El Desdichado</i>.
                 </li>
                 <li>
-                    431. V. Kyd's <i>Spanish Tragedy</i>.
+                    <a href="#line-432">431.</a> V. Kyd's <i>Spanish Tragedy</i>.
                 </li>
                 <li>
-                    433. Shantih. Repeated as here, a formal ending to an Upanishad. “The Peace which passeth
+                    <a href="#line-434">433.</a> Shantih. Repeated as here, a formal ending to an Upanishad. “The Peace which passeth
                     understanding” is a feeble translation of the content of the word.
                 </li>
             </ul>
         </div>
     </div>
 
-    <footer class="footer mt-auto py-3 bg-light">
+    <!-- <footer class="footer mt-auto py-3 bg-light">
         <div class="container">
             <span class="text-muted">Inspired by <a href="https://digitaldante.columbia.edu/"><i>Digital
                         Dante</i></a></span>
         </div>
-    </footer>
+    </footer> -->
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
